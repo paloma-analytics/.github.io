@@ -1,92 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paloma | Dados & Inteligência de Mercado</title>
-
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 40px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        h1 {
-            margin-top: 0;
-            font-size: 32px;
-        }
-
-        h2 {
-            margin-top: 40px;
-            font-size: 22px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 6px;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .project {
-            margin-top: 20px;
-        }
-
-        .project-title {
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paloma | Dados & Inteligência</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <div class="container">
-        <h1>Paloma</h1>
-        <p><strong>Dados & Inteligência de Mercado</strong></p>
 
-        <p>
-            Estudante de Ciência de Dados e profissional de Inteligência de Mercado,
-            com foco em Power BI, análise de dados e storytelling.
-        </p>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#inicio" class="active">Início</a></li>
+      <li><a href="#skills">Habilidades</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
 
-        <h2>Projetos</h2>
+  <!-- INÍCIO -->
+  <section id="inicio" class="section">
+    <h1>Paloma</h1>
+    <h2>Dados & Inteligência de Mercado</h2>
+    <p>
+      Estudante de Ciência de Dados e profissional de Inteligência de Mercado,
+      com foco em Power BI, análise de dados e storytelling.
+    </p>
+  </section>
 
-        <div class="project">
-            <div class="project-title">📊 BI Pessoal — Leitura & Hábitos</div>
-            <p>
-                Dashboard em Power BI para análise de hábitos de leitura.
-            </p>
-        </div>
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h1>Skills Técnicas</h1>
 
-        <div class="project">
-            <div class="project-title">📚 Educação no Brasil</div>
-            <p>
-                Análise de dados públicos do Censo Escolar usando Python.
-            </p>
-        </div>
-
-        <footer>
-            © 2026 — Paloma Analytics
-        </footer>
+    <h3>Ferramentas</h3>
+    <div class="cards">
+      <div class="card">Power BI</div>
+      <div class="card">Excel</div>
+      <div class="card">SQL</div>
     </div>
+
+    <h3>Linguagens</h3>
+    <div class="cards">
+      <div class="card">Python</div>
+      <div class="card">DAX</div>
+    </div>
+  </section>
+
+  <!-- PORTFÓLIO -->
+  <section id="portfolio" class="section">
+    <h1>Portfólio</h1>
+    <h4>Projetos</h4>
+
+    <div class="cards">
+      <div class="card placeholder">
+        Projetos em construção 🚧
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="section">
+    <h1>Contato</h1>
+
+    <div class="contact-card">
+      <p><strong>Email:</strong> palomasantosmaster@gmail.com</p>
+      <p><strong>Telefone:</strong> (11) 96199-0271</p>
+      <p><strong>LinkedIn:</strong> em breve 😉</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
