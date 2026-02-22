@@ -4,8 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paloma | Dados & Inteligência</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS DENTRO DO HTML -->
+  <style>
+    :root {
+      --rosa-claro: #FFB5C0;
+      --rosa-escuro: #FF8DA1;
+      --cinza: #555;
+      --branco: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(var(--rosa-claro), var(--rosa-escuro));
+      color: var(--cinza);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--rosa-escuro);
+      padding: 15px 0;
+      z-index: 10;
+    }
+
+    .navbar ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .navbar a {
+      color: var(--cinza);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .navbar a.active,
+    .navbar a:hover {
+      background: var(--rosa-claro);
+    }
+
+    /* SEÇÕES */
+    .section {
+      min-height: 100vh;
+      padding: 140px 20px 80px;
+      text-align: center;
+    }
+
+    .section h1 {
+      color: var(--branco);
+      margin-bottom: 10px;
+    }
+
+    .section h2,
+    .section h3,
+    .section h4 {
+      color: var(--cinza);
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--branco);
+      padding: 20px 30px;
+      border-radius: 15px;
+      min-width: 150px;
+    }
+
+    /* CONTATO */
+    .contact-card {
+      background: var(--branco);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 400px;
+      margin: auto;
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -24,7 +125,8 @@
     <h2>Dados & Inteligência de Mercado</h2>
     <p>
       Estudante de Ciência de Dados e profissional de Inteligência de Mercado,
-      com foco em Power BI, análise de dados e storytelling.
+      com atuação em Business Intelligence, análise de dados e geração de insights
+      para apoio à tomada de decisão.
     </p>
   </section>
 
@@ -36,12 +138,15 @@
     <div class="cards">
       <div class="card">Power BI</div>
       <div class="card">Excel</div>
-      <div class="card">SQL</div>
+      <div class="card">GitHub</div>
+      <div class="card">Looker Studio</div>
+      <div class="card">n8n</div>
     </div>
 
     <h3>Linguagens</h3>
     <div class="cards">
       <div class="card">Python</div>
+      <div class="card">SQL</div>
       <div class="card">DAX</div>
     </div>
   </section>
@@ -52,7 +157,7 @@
     <h4>Projetos</h4>
 
     <div class="cards">
-      <div class="card placeholder">
+      <div class="card">
         Projetos em construção 🚧
       </div>
     </div>
@@ -69,6 +174,17 @@
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <!-- JAVASCRIPT DENTRO DO HTML -->
+  <script>
+    const links = document.querySelectorAll('.navbar a');
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+
 </body>
 </html>
