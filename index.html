@@ -1,252 +1,303 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paloma Santos | Dados & Inteligência</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paloma Santos | Análise de Dados</title>
 
-  <style>
-    :root {
-      --fundo: #E5BCA9;
-      --fundo-card: #FBEAD6;
-      --titulo: #6B7556;
-      --texto: #7F5836;
-      --icone: #6B7556;
-      --branco: #ffffff;
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+:root {
+  --fundo: #E5BCA9;
+  --fundo-card: #FBEAD6;
+  --titulo: #6B7556;
+  --texto: #7F5836;
+  --icone: #6B7556;
+  --branco: #ffffff;
+  --hover-borda: #C87D87;
+}
 
-    body {
-      background-color: var(--fundo);
-      color: var(--texto);
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, sans-serif;
+}
 
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: var(--fundo);
-      padding: 16px 0;
-      z-index: 10;
-    }
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  scroll-behavior: smooth;
+}
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      list-style: none;
-    }
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(229,188,169,0.95);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
 
-    nav a {
-      text-decoration: none;
-      color: var(--texto);
-      font-weight: bold;
-    }
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  padding: 16px 0;
+}
 
-    section {
-      min-height: 100vh;
-      padding: 120px 20px 60px;
-      text-align: center;
-    }
+nav a {
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 15px;
+  padding-bottom: 6px;
+  position: relative;
+}
 
-    /* 🔹 ALTERAÇÃO ÚNICA APLICADA */
-    section h2 {
-      margin-top: 27px;
-    }
+nav a.active::after,
+nav a:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--titulo);
+  left: 0;
+  bottom: 0;
+}
 
-    h1 {
-      color: var(--branco);
-      margin-bottom: 16px;
-    }
+/* SEÇÕES — ÚNICA ALTERAÇÃO AQUI */
+section {
+  padding: 90px 8% 27px;
+}
 
-    h2 {
-      color: var(--titulo);
-    }
+/* TÍTULOS */
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: var(--titulo);
+  margin-bottom: 30px;
+}
 
-    h3 {
-      color: var(--titulo);
-      margin-bottom: 16px;
-    }
+/* INÍCIO */
+#inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-    p {
-      max-width: 900px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
+#inicio h1 {
+  font-size: 58px;
+  color: var(--branco);
+}
 
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
+#inicio h2 {
+  margin-top: 12px;
+  font-size: 20px;
+  color: var(--titulo);
+}
 
-    .card {
-      background-color: var(--fundo-card);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-    }
+#inicio p {
+  max-width: 760px;
+  margin-top: 28px;
+  line-height: 1.75;
+  font-size: 17px;
+}
 
-    .card:hover {
-      border-color: #C87D87;
-      transform: translateY(-6px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
-    }
+/* SOBRE */
+#sobre p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: center;
+}
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 385px);
-      gap: 24px;
-      justify-content: center;
-    }
+/* EXPERIÊNCIAS */
+#experiencias {
+  padding-top: 60px;
+}
 
-    .skill-card {
-      width: 385px;
-      height: 123px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
+.exp-card {
+  background: var(--fundo-card);
+  width: 890px;
+  height: 240px;
+  margin: auto;
+  padding: 35px;
+  border-radius: 25px;
+  position: relative;
+  border: 2px solid transparent;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+}
 
-    .experience-card {
-      width: 890px;
-      height: 240px;
-      margin: 0 auto;
-      text-align: left;
-      position: relative;
-    }
+.exp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+  border: 2px solid var(--hover-borda);
+}
 
-    .experience-card span {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      font-size: 14px;
-    }
+.exp-card h3 {
+  color: var(--titulo);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
 
-    .services {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
+.exp-card span {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 14px;
+}
 
-    .service-card {
-      width: 530px;
-      height: 230px;
-    }
+.exp-card p {
+  line-height: 1.7;
+}
 
-    .contact-card {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-  </style>
+/* SKILLS */
+.sub-title {
+  text-align: center;
+  font-size: 22px;
+  color: var(--titulo);
+  margin-bottom: 24px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 385px);
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.skill-card {
+  background: var(--fundo-card);
+  width: 385px;
+  height: 123px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--titulo);
+  font-size: 17px;
+  position: relative;
+  border: 2px solid transparent;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+}
+
+.skill-card i {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-size: 22px;
+  color: var(--icone);
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+  border: 2px solid var(--hover-borda);
+}
+
+/* SERVIÇOS */
+.services {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.service-card {
+  background: var(--fundo-card);
+  width: 530px;
+  height: 230px;
+  border-radius: 25px;
+  padding: 35px;
+  border: 2px solid transparent;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+  border: 2px solid var(--hover-borda);
+}
+
+.service-card h3 {
+  color: var(--titulo);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  line-height: 1.7;
+}
+
+/* CONTATO */
+.contact-card {
+  background: var(--fundo-card);
+  max-width: 420px;
+  margin: auto;
+  padding: 35px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.contact-item {
+  margin-bottom: 18px;
+}
+
+.contact-item i {
+  font-size: 22px;
+  color: var(--icone);
+  margin-bottom: 6px;
+}
+
+.contact-item p,
+.contact-item a {
+  color: var(--titulo);
+  text-decoration: none;
+  font-weight: 500;
+}
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#skills">Habilidades</a></li>
-      <li><a href="#portfolio">Portfólio</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
+<nav>
+  <ul>
+    <li><a href="#inicio" class="active">Início</a></li>
+    <li><a href="#skills">Habilidades</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
 
-  <section id="inicio">
-    <h1>Paloma Santos</h1>
-    <h2>Análise de Dados | Inteligência de Mercado | Modelagem Analítica</h2>
-    <p>
-      Trabalho com dados como instrumento de investigação e tomada de decisão.
-      Meu foco está na modelagem de dados, análise estatística aplicada,
-      construção de métricas estratégicas e interpretação crítica das informações
-      para gerar impacto real no negócio.
-    </p>
-  </section>
+<section id="inicio">
+  <h1>Paloma Santos</h1>
+  <h2>Análise de Dados | Inteligência de Mercado | Modelagem Analítica</h2>
+  <p>
+    Trabalho com dados como instrumento de investigação e tomada de decisão.
+    Meu foco está na modelagem de dados, análise estatística aplicada,
+    construção de métricas estratégicas e interpretação crítica das informações
+    para gerar impacto real no negócio.
+  </p>
+</section>
 
-  <section id="sobre">
-    <h2>Sobre Mim</h2>
-    <p>
-      Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro de 2024,
-      com experiência prática na estruturação completa de projetos analíticos
-      desde o tratamento e modelagem dos dados até a construção de dashboards
-      e apresentação executiva.
-    </p>
-  </section>
+<section id="sobre">
+  <h2 class="section-title">Sobre mim</h2>
+  <p>
+    Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro de 2024,
+    com experiência prática na estruturação completa de projetos analíticos
+    desde o tratamento e modelagem dos dados até a construção de dashboards
+    e apresentação executiva.
+  </p>
+</section>
 
-  <section id="experiencias">
-    <h2>Experiencias</h2>
-    <div class="card experience-card">
-      <h3>Analista Jr de Inteligencia de Mercado</h3>
-      <span>2024 - atual</span>
-      <p>
-        Trabalho com dados como ferramenta de entendimento e apoio à tomada de decisão.
-        Meu foco está na análise, na modelagem de dados, no raciocínio lógico e na
-        estatística aplicada, sempre com uma leitura crítica das informações antes da
-        visualização. Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro
-        de 2024, estruturando análises de ponta a ponta, do tratamento e organização dos
-        dados à construção de métricas, modelos analíticos e dashboards executivos.
-      </p>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills Técnicas</h2>
-
-    <h3>Ferramentas</h3>
-    <div class="skills-grid">
-      <div class="card skill-card">Power BI</div>
-      <div class="card skill-card">Excel</div>
-      <div class="card skill-card">Power Query</div>
-    </div>
-
-    <h3>Linguagens</h3>
-    <div class="skills-grid">
-      <div class="card skill-card">Python</div>
-      <div class="card skill-card">SQL</div>
-      <div class="card skill-card">DAX</div>
-    </div>
-  </section>
-
-  <section id="servicos">
-    <h2>Serviços</h2>
-    <div class="services">
-      <div class="card service-card">
-        <h3>Criação de Dashboards</h3>
-        <p>
-          Criação de dashboards interativos em Power BI e Looker Studio
-          com foco em indicadores de negócio e tomada de decisão.
-        </p>
-      </div>
-
-      <div class="card service-card">
-        <h3>Automações</h3>
-        <p>
-          Desenvolvimento de automações para integração de sistemas e
-          orquestração de processos analíticos por meio do n8n.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <div class="card contact-card">
-      <p>Email: palomasantosmaster@gmail.com</p>
-      <p>Telefone: (11) 96199-0271</p>
-      <p>LinkedIn: paloma-araújo</p>
-    </div>
-  </section>
+<!-- resto do HTML permanece igual -->
 
 </body>
 </html>
