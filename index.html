@@ -5,18 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paloma Santos | Análise de Dados</title>
 
-<!-- Ícones -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root {
-  --fundo: #F2CF2A;
-  --fundo-card: #EC9C9D;
-  --titulo: #443025;
+  --fundo: #E5BCA9;
+  --fundo-card: #FBEAD6;
+  --titulo: #6B7556;
   --texto: #7F5836;
-  --icone: #AA7F66;
-  --hover-borda: #C87D87;
+  --icone: #6B7556;
   --branco: #ffffff;
+  --hover-borda: #C87D87;
 }
 
 * {
@@ -37,7 +36,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(242, 207, 42, 0.95);
+  background: rgba(229,188,169,0.95);
   backdrop-filter: blur(6px);
   z-index: 1000;
 }
@@ -82,22 +81,6 @@ section {
   margin-bottom: 45px;
 }
 
-/* HOVER GERAL DOS CARDS */
-.card,
-.contact-card,
-.service-card {
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
-  border: 2px solid transparent;
-}
-
-.card:hover,
-.contact-card:hover,
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 35px rgba(0,0,0,0.18);
-  border: 2px solid var(--hover-borda);
-}
-
 /* INÍCIO */
 #inicio {
   display: flex;
@@ -137,7 +120,8 @@ section {
 /* EXPERIÊNCIAS */
 .exp-card {
   background: var(--fundo-card);
-  max-width: 900px;
+  width: 890px;
+  height: 240px;
   margin: auto;
   padding: 35px;
   border-radius: 25px;
@@ -155,11 +139,10 @@ section {
   top: 25px;
   right: 30px;
   font-size: 14px;
-  color: var(--texto);
 }
 
 .exp-card p {
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
 /* SKILLS */
@@ -178,7 +161,7 @@ section {
   margin: auto;
 }
 
-.card {
+.skill-card {
   background: var(--fundo-card);
   width: 385px;
   height: 123px;
@@ -190,9 +173,11 @@ section {
   color: var(--titulo);
   font-size: 17px;
   position: relative;
+  border: 2px solid transparent;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
 }
 
-.card i {
+.skill-card i {
   position: absolute;
   top: 14px;
   left: 16px;
@@ -200,17 +185,25 @@ section {
   color: var(--icone);
 }
 
+/* HOVER SOMENTE SKILLS */
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+  border: 2px solid var(--hover-borda);
+}
+
 /* SERVIÇOS */
 .services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 35px;
-  max-width: 1100px;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .service-card {
   background: var(--fundo-card);
+  width: 530px;
+  height: 230px;
   border-radius: 25px;
   padding: 35px;
 }
@@ -289,17 +282,16 @@ section {
 <section id="experiencias">
   <h2 class="section-title">Experiencias</h2>
 
-  <div class="exp-card card">
+  <div class="exp-card">
     <h3>Analista Jr de Inteligencia de Mercado</h3>
     <span>2024 - atual</span>
     <p>
       Trabalho com dados como ferramenta de entendimento e apoio à tomada de decisão.
       Meu foco está na análise, na modelagem de dados, no raciocínio lógico e na
-      estatística aplicada, sempre com uma leitura crítica das informações antes
-      da visualização. Atuo com Análise de Dados e Inteligência de Mercado desde
-      fevereiro de 2024, estruturando análises de ponta a ponta, do tratamento
-      e organização dos dados à construção de métricas, modelos analíticos
-      e dashboards executivos.
+      estatística aplicada, sempre com uma leitura crítica das informações antes da
+      visualização. Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro
+      de 2024, estruturando análises de ponta a ponta, do tratamento e organização dos
+      dados à construção de métricas, modelos analíticos e dashboards executivos.
     </p>
   </div>
 </section>
@@ -309,19 +301,19 @@ section {
 
   <h3 class="sub-title">Ferramentas</h3>
   <div class="cards">
-    <div class="card"><i class="fa-solid fa-chart-column"></i>Power BI</div>
-    <div class="card"><i class="fa-solid fa-file-excel"></i>Excel</div>
-    <div class="card"><i class="fa-solid fa-database"></i>Power Query</div>
-    <div class="card"><i class="fa-solid fa-diagram-project"></i>Looker Studio</div>
-    <div class="card"><i class="fa-brands fa-github"></i>GitHub</div>
-    <div class="card"><i class="fa-solid fa-gear"></i>n8n</div>
+    <div class="skill-card"><i class="fa-solid fa-chart-column"></i>Power BI</div>
+    <div class="skill-card"><i class="fa-solid fa-file-excel"></i>Excel</div>
+    <div class="skill-card"><i class="fa-solid fa-database"></i>Power Query</div>
+    <div class="skill-card"><i class="fa-solid fa-diagram-project"></i>Looker Studio</div>
+    <div class="skill-card"><i class="fa-brands fa-github"></i>GitHub</div>
+    <div class="skill-card"><i class="fa-solid fa-gear"></i>n8n</div>
   </div>
 
   <h3 class="sub-title" style="margin-top:50px;">Linguagens</h3>
   <div class="cards">
-    <div class="card"><i class="fa-solid fa-database"></i>SQL</div>
-    <div class="card"><i class="fa-brands fa-python"></i>Python</div>
-    <div class="card"><i class="fa-solid fa-calculator"></i>DAX</div>
+    <div class="skill-card"><i class="fa-solid fa-database"></i>SQL</div>
+    <div class="skill-card"><i class="fa-brands fa-python"></i>Python</div>
+    <div class="skill-card"><i class="fa-solid fa-calculator"></i>DAX</div>
   </div>
 </section>
 
@@ -329,21 +321,21 @@ section {
   <h2 class="section-title">Serviços</h2>
 
   <div class="services">
-    <div class="service-card card">
+    <div class="service-card">
       <h3>Criação de Dashboards</h3>
       <p>
-        Criação de dashboards interativos em Power BI e Looker Studio
-        com foco em indicadores de negócio e tomada de decisão.
+        Criação de dashboards interativos em Power BI e Looker Studio com foco
+        em indicadores de negócio e tomada de decisão.
       </p>
     </div>
 
-    <div class="service-card card">
+    <div class="service-card">
       <h3>Automações</h3>
       <p>
-        Desenvolvimento de automações para integração de sistemas
-        e orquestração de processos analíticos, reduzindo tarefas manuais
-        e garantindo maior eficiência, consistência e escalabilidade
-        no uso dos dados por meio de fluxos no n8n.
+        Desenvolvimento de automações para integração de sistemas e orquestração
+        de processos analíticos, reduzindo tarefas manuais e garantindo maior
+        eficiência, consistência e escalabilidade no uso dos dados por meio de
+        fluxos no n8n.
       </p>
     </div>
   </div>
@@ -356,7 +348,7 @@ section {
 
 <section id="contato">
   <h2 class="section-title">Contato</h2>
-  <div class="contact-card card">
+  <div class="contact-card">
     <div class="contact-item">
       <i class="fa-solid fa-envelope"></i>
       <p>palomasantosmaster@gmail.com</p>
