@@ -1,190 +1,310 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paloma | Dados & Inteligência</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paloma | Análise de Dados</title>
 
-  <!-- CSS DENTRO DO HTML -->
-  <style>
-    :root {
-      --rosa-claro: #FFB5C0;
-      --rosa-escuro: #FF8DA1;
-      --cinza: #555;
-      --branco: #ffffff;
-    }
+<style>
+:root {
+  --rosa-claro: #FFB5C0;
+  --rosa-escuro: #FF8DA1;
+  --cinza-escuro: #333;
+  --cinza-medio: #555;
+  --branco: #ffffff;
+  --fundo: #0f172a;
+  --fundo-card: #ffffff;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, sans-serif;
+}
 
-    body {
-      background: linear-gradient(var(--rosa-claro), var(--rosa-escuro));
-      color: var(--cinza);
-    }
+body {
+  background: linear-gradient(180deg, #0f172a, #020617);
+  color: var(--cinza-medio);
+  scroll-behavior: smooth;
+}
 
-    /* NAVBAR */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: var(--rosa-escuro);
-      padding: 15px 0;
-      z-index: 10;
-    }
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
 
-    .navbar ul {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      list-style: none;
-    }
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  padding: 18px 0;
+}
 
-    .navbar a {
-      color: var(--cinza);
-      text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 20px;
-      transition: 0.3s;
-    }
+nav a {
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 15px;
+  padding-bottom: 6px;
+  position: relative;
+}
 
-    .navbar a.active,
-    .navbar a:hover {
-      background: var(--rosa-claro);
-    }
+nav a.active::after,
+nav a:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--rosa-escuro);
+  left: 0;
+  bottom: 0;
+}
 
-    /* SEÇÕES */
-    .section {
-      min-height: 100vh;
-      padding: 140px 20px 80px;
-      text-align: center;
-    }
+/* SECTIONS */
+section {
+  min-height: 100vh;
+  padding: 140px 8%;
+}
 
-    .section h1 {
-      color: var(--branco);
-      margin-bottom: 10px;
-    }
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: var(--rosa-escuro);
+  margin-bottom: 60px;
+}
 
-    .section h2,
-    .section h3,
-    .section h4 {
-      color: var(--cinza);
-      margin-bottom: 20px;
-    }
+/* INÍCIO */
+#inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-    .section p {
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
+#inicio h1 {
+  font-size: 56px;
+  color: var(--branco);
+}
 
-    /* CARDS */
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
+#inicio h2 {
+  margin-top: 12px;
+  font-size: 22px;
+  color: var(--rosa-claro);
+}
 
-    .card {
-      background: var(--branco);
-      padding: 20px 30px;
-      border-radius: 15px;
-      min-width: 150px;
-    }
+#inicio p {
+  max-width: 720px;
+  margin-top: 30px;
+  line-height: 1.7;
+  font-size: 17px;
+  color: #cbd5f5;
+}
 
-    /* CONTATO */
-    .contact-card {
-      background: var(--branco);
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 400px;
-      margin: auto;
-    }
-  </style>
+/* SOBRE */
+#sobre p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: center;
+  color: #cbd5f5;
+}
+
+/* EXPERIÊNCIA */
+.exp-box {
+  max-width: 900px;
+  margin: 60px auto 0;
+  text-align: center;
+}
+
+.exp-box h3 {
+  color: var(--rosa-escuro);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.exp-box span {
+  display: block;
+  margin-bottom: 25px;
+  color: #94a3b8;
+}
+
+.exp-box p {
+  line-height: 1.8;
+  color: #cbd5f5;
+}
+
+/* SKILLS */
+.sub-title {
+  text-align: center;
+  font-size: 22px;
+  color: var(--rosa-escuro);
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: var(--fundo-card);
+  padding: 28px;
+  border-radius: 18px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--cinza-escuro);
+}
+
+/* SERVIÇOS */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.service-card {
+  background: var(--fundo-card);
+  padding: 30px;
+  border-radius: 22px;
+}
+
+.service-card h3 {
+  color: var(--rosa-escuro);
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  line-height: 1.7;
+  color: var(--cinza-medio);
+}
+
+/* PORTFÓLIO */
+#portfolio p {
+  text-align: center;
+  color: #cbd5f5;
+}
+
+/* CONTATO */
+.contact-card {
+  background: var(--fundo-card);
+  max-width: 420px;
+  margin: auto;
+  padding: 35px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.contact-card p {
+  margin-bottom: 15px;
+  color: var(--cinza-escuro);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  #inicio h1 {
+    font-size: 44px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#inicio" class="active">Início</a></li>
-      <li><a href="#skills">Habilidades</a></li>
-      <li><a href="#portfolio">Portfólio</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
+<nav>
+  <ul>
+    <li><a href="#inicio" class="active">Início</a></li>
+    <li><a href="#skills">Habilidades</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
 
-  <!-- INÍCIO -->
-  <section id="inicio" class="section">
-    <h1>Paloma</h1>
-    <h2>Dados & Inteligência de Mercado</h2>
+<section id="inicio">
+  <h1>Paloma</h1>
+  <h2>Análise de Dados & Inteligência de Mercado</h2>
+  <p>
+    Trabalho com dados como ferramenta de entendimento.
+    Meu foco está na análise, no raciocínio lógico, na estatística aplicada
+    e na leitura crítica das informações para apoiar decisões reais de negócio.
+  </p>
+</section>
+
+<section id="sobre">
+  <h2 class="section-title">Sobre mim</h2>
+  <p>
+    Atuo com análise de dados e inteligência de mercado desde fevereiro de 2024.
+    Meu trabalho é guiado por perguntas bem formuladas, exploração profunda dos dados
+    e cuidado com a interpretação antes de qualquer visualização.
+  </p>
+
+  <div class="exp-box">
+    <h3>Analista de Dados & Inteligência de Mercado</h3>
+    <span>Fevereiro de 2024 — Atual</span>
     <p>
-      Estudante de Ciência de Dados e profissional de Inteligência de Mercado,
-      com atuação em Business Intelligence, análise de dados e geração de insights
-      para apoio à tomada de decisão.
+      Exploração de dados, construção de métricas, análise estatística básica,
+      automação de processos analíticos e suporte à tomada de decisão.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <h1>Skills Técnicas</h1>
+<section id="skills">
+  <h2 class="section-title">Skills Técnicas</h2>
 
-    <h3>Ferramentas</h3>
-    <div class="cards">
-      <div class="card">Power BI</div>
-      <div class="card">Excel</div>
-      <div class="card">GitHub</div>
-      <div class="card">Looker Studio</div>
-      <div class="card">n8n</div>
-    </div>
+  <h3 class="sub-title">Ferramentas</h3>
+  <div class="cards">
+    <div class="card">Power BI</div>
+    <div class="card">Excel</div>
+    <div class="card">Power Query</div>
+    <div class="card">Looker Studio</div>
+    <div class="card">GitHub</div>
+    <div class="card">n8n</div>
+  </div>
 
-    <h3>Linguagens</h3>
-    <div class="cards">
-      <div class="card">Python</div>
-      <div class="card">SQL</div>
-      <div class="card">DAX</div>
-    </div>
-  </section>
+  <h3 class="sub-title" style="margin-top:60px;">Linguagens</h3>
+  <div class="cards">
+    <div class="card">SQL</div>
+    <div class="card">Python</div>
+    <div class="card">DAX</div>
+  </div>
+</section>
 
-  <!-- PORTFÓLIO -->
-  <section id="portfolio" class="section">
-    <h1>Portfólio</h1>
-    <h4>Projetos</h4>
+<section id="portfolio">
+  <h2 class="section-title">Portfólio</h2>
+  <p>Projetos em estruturação.</p>
+</section>
 
-    <div class="cards">
-      <div class="card">
-        Projetos em construção 🚧
-      </div>
-    </div>
-  </section>
+<section id="contato">
+  <h2 class="section-title">Contato</h2>
+  <div class="contact-card">
+    <p><strong>Email:</strong><br> palomasantosmaster@gmail.com</p>
+    <p><strong>Telefone:</strong><br> (11) 96199-0271</p>
+    <p><strong>LinkedIn:</strong><br> em breve</p>
+  </div>
+</section>
 
-  <!-- CONTATO -->
-  <section id="contato" class="section">
-    <h1>Contato</h1>
+<script>
+const links = document.querySelectorAll("nav a");
 
-    <div class="contact-card">
-      <p><strong>Email:</strong> palomasantosmaster@gmail.com</p>
-      <p><strong>Telefone:</strong> (11) 96199-0271</p>
-      <p><strong>LinkedIn:</strong> em breve 😉</p>
-    </div>
-  </section>
-
-  <!-- JAVASCRIPT DENTRO DO HTML -->
-  <script>
-    const links = document.querySelectorAll('.navbar a');
-
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        links.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  </script>
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    links.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+</script>
 
 </body>
 </html>
