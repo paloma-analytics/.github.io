@@ -68,12 +68,12 @@ nav a:hover::after {
   bottom: 0;
 }
 
-/* SEÇÕES — ÚNICA ALTERAÇÃO AQUI */
+/* SEÇÕES */
 section {
-  padding: 90px 8% 27px;
+  min-height: 100vh;
+  padding: 90px 8%;
 }
 
-/* TÍTULOS */
 .section-title {
   text-align: center;
   font-size: 36px;
@@ -165,6 +165,7 @@ section {
   margin-bottom: 24px;
 }
 
+/* GRID FIXO 3 POR LINHA */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 385px);
@@ -173,6 +174,7 @@ section {
   margin-bottom: 40px;
 }
 
+/* CARD SKILL */
 .skill-card {
   background: var(--fundo-card);
   width: 385px;
@@ -197,6 +199,7 @@ section {
   color: var(--icone);
 }
 
+/* HOVER SKILLS */
 .skill-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 18px 35px rgba(0,0,0,0.18);
@@ -297,7 +300,100 @@ section {
   </p>
 </section>
 
-<!-- resto do HTML permanece igual -->
+<section id="experiencias">
+  <h2 class="section-title">Experiencias</h2>
+
+  <div class="exp-card">
+    <h3>Analista Jr de Inteligencia de Mercado</h3>
+    <span>2024 - atual</span>
+    <p>
+      Trabalho com dados como ferramenta de entendimento e apoio à tomada de decisão.
+      Meu foco está na análise, na modelagem de dados, no raciocínio lógico e na
+      estatística aplicada, sempre com uma leitura crítica das informações antes da
+      visualização. Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro
+      de 2024, estruturando análises de ponta a ponta, do tratamento e organização dos
+      dados à construção de métricas, modelos analíticos e dashboards executivos.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">Skills Técnicas</h2>
+
+  <h3 class="sub-title">Ferramentas</h3>
+  <div class="cards">
+    <div class="skill-card"><i class="fa-solid fa-chart-column"></i>Power BI</div>
+    <div class="skill-card"><i class="fa-solid fa-file-excel"></i>Excel</div>
+    <div class="skill-card"><i class="fa-solid fa-database"></i>Power Query</div>
+    <div class="skill-card"><i class="fa-solid fa-diagram-project"></i>Looker Studio</div>
+    <div class="skill-card"><i class="fa-brands fa-github"></i>GitHub</div>
+    <div class="skill-card"><i class="fa-solid fa-gear"></i>n8n</div>
+  </div>
+
+  <h3 class="sub-title">Linguagens</h3>
+  <div class="cards">
+    <div class="skill-card"><i class="fa-solid fa-database"></i>SQL</div>
+    <div class="skill-card"><i class="fa-brands fa-python"></i>Python</div>
+    <div class="skill-card"><i class="fa-solid fa-calculator"></i>DAX</div>
+  </div>
+</section>
+
+<section id="servicos">
+  <h2 class="section-title">Serviços</h2>
+
+  <div class="services">
+    <div class="service-card">
+      <h3>Criação de Dashboards</h3>
+      <p>
+        Criação de dashboards interativos em Power BI e Looker Studio com foco
+        em indicadores de negócio e tomada de decisão.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Automações</h3>
+      <p>
+        Desenvolvimento de automações para integração de sistemas e orquestração
+        de processos analíticos, reduzindo tarefas manuais e garantindo maior
+        eficiência, consistência e escalabilidade no uso dos dados por meio de
+        fluxos no n8n.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2 class="section-title">Portfólio</h2>
+  <p style="text-align:center;">Projetos em estruturação.</p>
+</section>
+
+<section id="contato">
+  <h2 class="section-title">Contato</h2>
+  <div class="contact-card">
+    <div class="contact-item">
+      <i class="fa-solid fa-envelope"></i>
+      <p>palomasantosmaster@gmail.com</p>
+    </div>
+    <div class="contact-item">
+      <i class="fa-solid fa-phone"></i>
+      <p>(11) 96199-0271</p>
+    </div>
+    <div class="contact-item">
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/paloma-ara%C3%BAjo-579289209" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<script>
+const links = document.querySelectorAll("nav a");
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    links.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+</script>
 
 </body>
 </html>
