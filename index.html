@@ -5,15 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paloma | Análise de Dados</title>
 
+<!-- Ícones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 :root {
-  --rosa-claro: #FFB5C0;
-  --rosa-escuro: #FF8DA1;
-  --cinza-escuro: #333;
-  --cinza-medio: #555;
+  --fundo: #F2CF2A;
+  --fundo-card: #EC9C9D;
+  --titulo: #443025;
+  --texto: #7F5836;
+  --icone: #AA7F66;
   --branco: #ffffff;
-  --fundo: #0f172a;
-  --fundo-card: #ffffff;
 }
 
 * {
@@ -24,8 +26,8 @@
 }
 
 body {
-  background: linear-gradient(180deg, #0f172a, #020617);
-  color: var(--cinza-medio);
+  background: var(--fundo);
+  color: var(--texto);
   scroll-behavior: smooth;
 }
 
@@ -34,7 +36,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(242, 207, 42, 0.95);
   backdrop-filter: blur(6px);
   z-index: 1000;
 }
@@ -44,11 +46,11 @@ nav ul {
   justify-content: center;
   gap: 40px;
   list-style: none;
-  padding: 18px 0;
+  padding: 16px 0;
 }
 
 nav a {
-  color: #cbd5f5;
+  color: var(--texto);
   text-decoration: none;
   font-size: 15px;
   padding-bottom: 6px;
@@ -61,22 +63,22 @@ nav a:hover::after {
   position: absolute;
   width: 100%;
   height: 2px;
-  background: var(--rosa-escuro);
+  background: var(--titulo);
   left: 0;
   bottom: 0;
 }
 
-/* SECTIONS */
+/* SEÇÕES */
 section {
   min-height: 100vh;
-  padding: 140px 8%;
+  padding: 110px 8%;
 }
 
 .section-title {
   text-align: center;
   font-size: 36px;
-  color: var(--rosa-escuro);
-  margin-bottom: 60px;
+  color: var(--titulo);
+  margin-bottom: 45px;
 }
 
 /* INÍCIO */
@@ -94,17 +96,16 @@ section {
 }
 
 #inicio h2 {
-  margin-top: 12px;
+  margin-top: 10px;
   font-size: 22px;
-  color: var(--rosa-claro);
+  color: var(--titulo);
 }
 
 #inicio p {
   max-width: 720px;
-  margin-top: 30px;
+  margin-top: 25px;
   line-height: 1.7;
   font-size: 17px;
-  color: #cbd5f5;
 }
 
 /* SOBRE */
@@ -114,87 +115,64 @@ section {
   font-size: 17px;
   line-height: 1.8;
   text-align: center;
-  color: #cbd5f5;
 }
 
-/* EXPERIÊNCIA */
 .exp-box {
   max-width: 900px;
-  margin: 60px auto 0;
+  margin: 45px auto 0;
   text-align: center;
 }
 
 .exp-box h3 {
-  color: var(--rosa-escuro);
+  color: var(--titulo);
   font-size: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .exp-box span {
   display: block;
-  margin-bottom: 25px;
-  color: #94a3b8;
+  margin-bottom: 18px;
 }
 
 .exp-box p {
-  line-height: 1.8;
-  color: #cbd5f5;
+  line-height: 1.7;
 }
 
 /* SKILLS */
 .sub-title {
   text-align: center;
   font-size: 22px;
-  color: var(--rosa-escuro);
-  margin-bottom: 30px;
+  color: var(--titulo);
+  margin-bottom: 25px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 25px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.card {
-  background: var(--fundo-card);
-  padding: 28px;
-  border-radius: 18px;
-  text-align: center;
-  font-weight: 600;
-  color: var(--cinza-escuro);
-}
-
-/* SERVIÇOS */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   max-width: 1000px;
   margin: auto;
 }
 
-.service-card {
+.card {
   background: var(--fundo-card);
-  padding: 30px;
-  border-radius: 22px;
+  width: 250px;
+  height: 120px;
+  border-radius: 18px;
+  padding: 18px 20px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  font-weight: 600;
+  color: var(--titulo);
 }
 
-.service-card h3 {
-  color: var(--rosa-escuro);
-  margin-bottom: 15px;
-}
-
-.service-card p {
-  line-height: 1.7;
-  color: var(--cinza-medio);
-}
-
-/* PORTFÓLIO */
-#portfolio p {
-  text-align: center;
-  color: #cbd5f5;
+.card i {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 22px;
+  color: var(--icone);
 }
 
 /* CONTATO */
@@ -207,9 +185,21 @@ section {
   text-align: center;
 }
 
-.contact-card p {
-  margin-bottom: 15px;
-  color: var(--cinza-escuro);
+.contact-item {
+  margin-bottom: 18px;
+}
+
+.contact-item i {
+  font-size: 22px;
+  color: var(--icone);
+  margin-bottom: 6px;
+}
+
+.contact-item p,
+.contact-item a {
+  color: var(--titulo);
+  text-decoration: none;
+  font-weight: 500;
 }
 
 /* RESPONSIVO */
@@ -245,17 +235,17 @@ section {
 <section id="sobre">
   <h2 class="section-title">Sobre mim</h2>
   <p>
-    Atuo com análise de dados e inteligência de mercado desde fevereiro de 2024.
-    Meu trabalho é guiado por perguntas bem formuladas, exploração profunda dos dados
-    e cuidado com a interpretação antes de qualquer visualização.
+    Atuo com análise de dados e inteligência de mercado desde fevereiro de 2024,
+    com foco em exploração de dados, construção de métricas e interpretação
+    cuidadosa das informações antes de qualquer visualização.
   </p>
 
   <div class="exp-box">
     <h3>Analista de Dados & Inteligência de Mercado</h3>
     <span>Fevereiro de 2024 — Atual</span>
     <p>
-      Exploração de dados, construção de métricas, análise estatística básica,
-      automação de processos analíticos e suporte à tomada de decisão.
+      Análise exploratória, raciocínio analítico, estatística aplicada ao negócio
+      e automações analíticas para apoiar decisões estratégicas.
     </p>
   </div>
 </section>
@@ -265,33 +255,46 @@ section {
 
   <h3 class="sub-title">Ferramentas</h3>
   <div class="cards">
-    <div class="card">Power BI</div>
-    <div class="card">Excel</div>
-    <div class="card">Power Query</div>
-    <div class="card">Looker Studio</div>
-    <div class="card">GitHub</div>
-    <div class="card">n8n</div>
+    <div class="card"><i class="fa-solid fa-chart-column"></i>Power BI</div>
+    <div class="card"><i class="fa-solid fa-file-excel"></i>Excel</div>
+    <div class="card"><i class="fa-solid fa-database"></i>Power Query</div>
+    <div class="card"><i class="fa-solid fa-diagram-project"></i>Looker Studio</div>
+    <div class="card"><i class="fa-brands fa-github"></i>GitHub</div>
+    <div class="card"><i class="fa-solid fa-gear"></i>n8n</div>
   </div>
 
-  <h3 class="sub-title" style="margin-top:60px;">Linguagens</h3>
+  <h3 class="sub-title" style="margin-top:45px;">Linguagens</h3>
   <div class="cards">
-    <div class="card">SQL</div>
-    <div class="card">Python</div>
-    <div class="card">DAX</div>
+    <div class="card"><i class="fa-solid fa-database"></i>SQL</div>
+    <div class="card"><i class="fa-brands fa-python"></i>Python</div>
+    <div class="card"><i class="fa-solid fa-calculator"></i>DAX</div>
   </div>
 </section>
 
 <section id="portfolio">
   <h2 class="section-title">Portfólio</h2>
-  <p>Projetos em estruturação.</p>
+  <p style="text-align:center;">Projetos em estruturação.</p>
 </section>
 
 <section id="contato">
   <h2 class="section-title">Contato</h2>
   <div class="contact-card">
-    <p><strong>Email:</strong><br> palomasantosmaster@gmail.com</p>
-    <p><strong>Telefone:</strong><br> (11) 96199-0271</p>
-    <p><strong>LinkedIn:</strong><br> em breve</p>
+    <div class="contact-item">
+      <i class="fa-solid fa-envelope"></i>
+      <p>palomasantosmaster@gmail.com</p>
+    </div>
+
+    <div class="contact-item">
+      <i class="fa-solid fa-phone"></i>
+      <p>(11) 96199-0271</p>
+    </div>
+
+    <div class="contact-item">
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/paloma-ara%C3%BAjo-579289209" target="_blank">
+        LinkedIn
+      </a>
+    </div>
   </div>
 </section>
 
