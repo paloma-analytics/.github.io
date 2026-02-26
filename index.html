@@ -1,319 +1,231 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paloma Santos | Análise de Dados</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paloma Santos</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonte equivalente visual à do site de referência -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --fundo: #E5BCA9;
-  --fundo-card: #FBEAD6;
-  --titulo: #6B7556;
-  --texto: #7F5836;
-  --icone: #6B7556;
-  --branco: #ffffff;
-}
+  <style>
+    /* RESET BÁSICO – igual ao comportamento do site de referência */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #7F5836;
+      line-height: 1.6;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
 
-body {
-  background: var(--fundo);
-  color: var(--texto);
-}
+    /* HEADER */
+    header {
+      margin-bottom: 120px;
+    }
 
-/* NAVBAR */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(229,188,169,0.95);
-  backdrop-filter: blur(8px);
-  z-index: 1000;
-}
+    header h1 {
+      font-size: 48px;
+      font-weight: 600;
+      color: #6B7556;
+      margin-bottom: 16px;
+    }
 
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  list-style: none;
-  padding: 20px 0;
-}
+    header h2 {
+      font-size: 18px;
+      font-weight: 400;
+      opacity: 0.9;
+    }
 
-nav a {
-  text-decoration: none;
-  color: var(--texto);
-  font-size: 14px;
-  letter-spacing: 1px;
-  transition: 0.3s;
-}
+    /* SEÇÕES */
+    section {
+      margin-bottom: 140px;
+    }
 
-nav a:hover {
-  color: var(--titulo);
-}
+    section h3 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 40px;
+      color: #6B7556;
+    }
 
-/* SECTIONS */
-section {
-  padding: 120px 10%;
-}
+    section p {
+      max-width: 760px;
+      font-size: 16px;
+    }
 
-.section-title {
-  text-align: center;
-  font-size: 38px;
-  color: var(--titulo);
-  margin-bottom: 50px;
-}
+    /* GRID DE CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
 
-/* HERO */
-#inicio {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
+    /* CARD BASE – comportamento idêntico ao site de referência */
+    .card {
+      background: #FBEAD6;
+      padding: 32px;
+      border-radius: 12px;
+      transition: all 0.35s ease;
+      border: 1px solid transparent;
+    }
 
-#inicio h1 {
-  font-size: 64px;
-  color: var(--branco);
-  font-weight: 700;
-}
+    .card:hover {
+      transform: translateY(-6px);
+      border: 1px solid #6B7556;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
 
-#inicio h2 {
-  font-size: 18px;
-  margin-top: 18px;
-  color: var(--titulo);
-  font-weight: 400;
-}
+    /* CARD EXPERIÊNCIA */
+    .experience-card {
+      max-width: 890px;
+    }
 
-#inicio p {
-  max-width: 800px;
-  margin: 30px auto 0;
-  line-height: 1.8;
-}
+    .experience-card h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #6B7556;
+    }
 
-/* SOBRE */
-#sobre p {
-  max-width: 900px;
-  margin: auto;
-  line-height: 1.9;
-  text-align: center;
-}
+    .experience-card span {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 16px;
+      opacity: 0.8;
+    }
 
-/* EXPERIÊNCIA */
-.exp-container {
-  display: flex;
-  justify-content: center;
-}
+    /* SKILLS */
+    .skill-card h4 {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #6B7556;
+    }
 
-.exp-card {
-  width: 890px;
-  height: 240px;
-  background: var(--fundo-card);
-  border-radius: 24px;
-  padding: 40px;
-  transition: all 0.4s ease;
-  border: 2px solid transparent;
-}
+    .skill-card p {
+      font-size: 14px;
+    }
 
-.exp-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 45px rgba(0,0,0,0.25);
-  border: 2px solid var(--titulo);
-  background: #f9dfc7;
-}
+    /* SERVIÇOS */
+    .service-card h4 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      color: #6B7556;
+    }
 
-.exp-card h3 {
-  color: var(--titulo);
-  margin-bottom: 8px;
-}
+    .service-card p {
+      font-size: 15px;
+    }
 
-.exp-card span {
-  font-size: 14px;
-  font-weight: 500;
-}
+    /* RESPONSIVO – mesmo comportamento do site base */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 36px;
+      }
 
-.exp-card p {
-  margin-top: 20px;
-  line-height: 1.8;
-}
-
-/* SKILLS */
-.skills-group {
-  margin-bottom: 60px;
-}
-
-.skills-group h3 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: var(--titulo);
-  font-weight: 500;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 385px);
-  justify-content: center;
-  gap: 30px;
-}
-
-.skill-card {
-  width: 385px;
-  height: 123px;
-  background: var(--fundo-card);
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  transition: all 0.4s ease;
-  border: 2px solid transparent;
-}
-
-.skill-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 35px rgba(0,0,0,0.25);
-  border: 2px solid var(--titulo);
-  background: #f9dfc7;
-}
-
-/* SERVIÇOS */
-.services {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.service-card {
-  width: 530px;
-  height: 230px;
-  background: var(--fundo-card);
-  border-radius: 24px;
-  padding: 40px;
-  transition: all 0.4s ease;
-  border: 2px solid transparent;
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 45px rgba(0,0,0,0.25);
-  border: 2px solid var(--titulo);
-  background: #f9dfc7;
-}
-
-.service-card h3 {
-  color: var(--titulo);
-  margin-bottom: 15px;
-}
-
-.service-card p {
-  line-height: 1.8;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px 0;
-  font-size: 14px;
-}
-</style>
+      section {
+        margin-bottom: 100px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<nav>
-  <ul>
-    <li><a href="#inicio">Início</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#experiencia">Experiência</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#servicos">Serviços</a></li>
-  </ul>
-</nav>
+  <div class="container">
 
-<section id="inicio">
-  <h1>Paloma Santos</h1>
-  <h2>Análise de Dados | Inteligência de Mercado | Modelagem Analítica</h2>
-</section>
+    <!-- HEADER -->
+    <header>
+      <h1>Paloma Santos</h1>
+      <h2>Análise de Dados | Inteligência de Mercado | Modelagem Analítica</h2>
+    </header>
 
-<section id="sobre">
-  <h2 class="section-title">Sobre Mim</h2>
-  <p>
-    Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro de 2024, com experiência prática na estruturação completa de projetos analíticos desde o tratamento e modelagem dos dados até a construção de dashboards e apresentação executiva.
-  </p>
-</section>
-
-<section id="experiencia">
-  <h2 class="section-title">Experiência</h2>
-  <div class="exp-container">
-    <div class="exp-card">
-      <h3>Analista Jr de Inteligência de Mercado</h3>
-      <span>2024 – atual</span>
+    <!-- SOBRE MIM -->
+    <section>
+      <h3>Sobre Mim</h3>
       <p>
-        Trabalho com dados como ferramenta de entendimento e apoio à tomada de decisão. Meu foco está na análise, na modelagem de dados, no raciocínio lógico e na estatística aplicada, sempre com uma leitura crítica das informações antes da visualização. Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro de 2024, estruturando análises de ponta a ponta, do tratamento e organização dos dados à construção de métricas, modelos analíticos e dashboards executivos.
+        Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro de 2024,
+        com experiência prática na estruturação completa de projetos analíticos desde
+        o tratamento e modelagem dos dados até a construção de dashboards e apresentação executiva.
       </p>
-    </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section>
+      <h3>Experiência</h3>
+
+      <div class="card experience-card">
+        <h4>Analista Jr de Inteligência de Mercado</h4>
+        <span>2024 – atual</span>
+        <p>
+          Trabalho com dados como ferramenta de entendimento e apoio à tomada de decisão.
+          Meu foco está na análise, na modelagem de dados, no raciocínio lógico e na estatística aplicada,
+          sempre com uma leitura crítica das informações antes da visualização. Atuo com Análise de Dados
+          e Inteligência de Mercado desde fevereiro de 2024, estruturando análises de ponta a ponta,
+          do tratamento e organização dos dados à construção de métricas, modelos analíticos e dashboards executivos.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+      <h3>Skills</h3>
+
+      <div class="cards">
+        <div class="card skill-card">
+          <h4>Linguagens</h4>
+          <p>Python, JavaScript, SQL, R</p>
+        </div>
+
+        <div class="card skill-card">
+          <h4>Ferramentas</h4>
+          <p>Docker, Power BI, Git, Looker Studio</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section>
+      <h3>Serviços</h3>
+
+      <div class="cards">
+        <div class="card service-card">
+          <h4>Criação de Dashboards</h4>
+          <p>
+            Criação de dashboards interativos em Power BI e Looker Studio
+            com foco em indicadores de negócio e tomada de decisão.
+          </p>
+        </div>
+
+        <div class="card service-card">
+          <h4>Automações</h4>
+          <p>
+            Desenvolvimento de automações para integração de sistemas e orquestração
+            de processos analíticos, reduzindo tarefas manuais e garantindo maior eficiência,
+            consistência e escalabilidade no uso dos dados por meio de fluxos no n8n.
+          </p>
+        </div>
+      </div>
+    </section>
+
   </div>
-</section>
 
-<section id="skills">
-  <h2 class="section-title">Skills</h2>
-
-  <div class="skills-group">
-    <h3>Linguagens</h3>
-    <div class="cards">
-      <div class="skill-card">Python</div>
-      <div class="skill-card">JavaScript</div>
-      <div class="skill-card">SQL</div>
-      <div class="skill-card">R</div>
-    </div>
-  </div>
-
-  <div class="skills-group">
-    <h3>Ferramentas</h3>
-    <div class="cards">
-      <div class="skill-card">Docker</div>
-      <div class="skill-card">Power BI</div>
-      <div class="skill-card">Git</div>
-      <div class="skill-card">Looker Studio</div>
-    </div>
-  </div>
-
-</section>
-
-<section id="servicos">
-  <h2 class="section-title">Serviços</h2>
-  <div class="services">
-    <div class="service-card">
-      <h3>Criação de Dashboards</h3>
-      <p>
-        Criação de dashboards interativos em Power BI e Looker Studio com foco em indicadores de negócio e tomada de decisão.
-      </p>
-    </div>
-    <div class="service-card">
-      <h3>Automações</h3>
-      <p>
-        Desenvolvimento de automações para integração de sistemas e orquestração de processos analíticos, reduzindo tarefas manuais e garantindo maior eficiência, consistência e escalabilidade no uso dos dados por meio de fluxos no n8n.
-      </p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 Paloma Santos
-</footer>
+  <!-- JS MÍNIMO – apenas para manter paridade estrutural -->
+  <script>
+    // Nenhuma lógica adicional propositalmente.
+    // O site de referência também é majoritariamente estático.
+  </script>
 
 </body>
 </html>
