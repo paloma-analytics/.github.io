@@ -2,14 +2,11 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Paloma Santos</title>
-
-  <!-- Fonte equivalente visual à do site de referência -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paloma Santos | Portfólio</title>
 
   <style>
-    /* RESET BÁSICO – igual ao comportamento do site de referência */
+    /* ===== RESET BÁSICO ===== */
     * {
       margin: 0;
       padding: 0;
@@ -17,215 +14,304 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: #E5BCA9;
       color: #7F5836;
       line-height: 1.6;
     }
 
-    .container {
+    main {
       max-width: 1100px;
       margin: 0 auto;
       padding: 80px 24px;
     }
 
-    /* HEADER */
-    header {
-      margin-bottom: 120px;
-    }
-
-    header h1 {
-      font-size: 48px;
+    h1, h2, h3 {
+      color: #6B7556;
       font-weight: 600;
-      color: #6B7556;
-      margin-bottom: 16px;
     }
 
-    header h2 {
-      font-size: 18px;
-      font-weight: 400;
-      opacity: 0.9;
-    }
-
-    /* SEÇÕES */
     section {
-      margin-bottom: 140px;
+      margin-bottom: 80px;
     }
 
-    section h3 {
-      font-size: 22px;
-      font-weight: 500;
-      margin-bottom: 40px;
+    /* ===== HERO ===== */
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .hero p.subtitle {
+      font-size: 18px;
+      margin-bottom: 32px;
       color: #6B7556;
     }
 
-    section p {
-      max-width: 760px;
+    .hero p.description {
+      max-width: 720px;
       font-size: 16px;
     }
 
-    /* GRID DE CARDS */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
+    /* ===== TÍTULOS DE SEÇÃO ===== */
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 32px;
     }
 
-    /* CARD BASE – comportamento idêntico ao site de referência */
+    /* ===== CARDS (BASE) ===== */
     .card {
-      background: #FBEAD6;
-      padding: 32px;
+      background-color: #FBEAD6;
       border-radius: 12px;
-      transition: all 0.35s ease;
+      padding: 24px;
       border: 1px solid transparent;
+      transition: all 0.3s ease;
     }
 
     .card:hover {
+      border-color: #6B7556;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
       transform: translateY(-6px);
-      border: 1px solid #6B7556;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      background-color: #fff3df;
     }
 
-    /* CARD EXPERIÊNCIA */
+    /* ===== O QUE EU FAÇO ===== */
+    .what-i-do {
+      max-width: 820px;
+    }
+
+    /* ===== EXPERIÊNCIA ===== */
     .experience-card {
-      max-width: 890px;
+      width: 890px;
+      max-width: 100%;
+      height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .experience-card h4 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: #6B7556;
+    .experience-card h3 {
+      font-size: 20px;
+      margin-bottom: 4px;
     }
 
     .experience-card span {
-      display: block;
       font-size: 14px;
-      margin-bottom: 16px;
-      opacity: 0.8;
-    }
-
-    /* SKILLS */
-    .skill-card h4 {
-      font-size: 16px;
-      font-weight: 500;
+      color: #6B7556;
       margin-bottom: 12px;
-      color: #6B7556;
+      display: block;
     }
 
-    .skill-card p {
-      font-size: 14px;
+    /* ===== PROJETOS ===== */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
     }
 
-    /* SERVIÇOS */
-    .service-card h4 {
+    .project-card h3 {
+      margin-bottom: 12px;
       font-size: 18px;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills-group {
+      margin-bottom: 48px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 385px);
+      gap: 24px;
+    }
+
+    .skill-card {
+      width: 385px;
+      height: 123px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: 500;
-      margin-bottom: 16px;
-      color: #6B7556;
+      font-size: 16px;
+      text-align: center;
     }
 
-    .service-card p {
-      font-size: 15px;
+    /* ===== SERVIÇOS ===== */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(530px, 1fr));
+      gap: 32px;
     }
 
-    /* RESPONSIVO – mesmo comportamento do site base */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 36px;
-      }
+    .service-card {
+      width: 530px;
+      max-width: 100%;
+      height: 230px;
+    }
 
-      section {
-        margin-bottom: 100px;
+    .service-card h3 {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    /* ===== SOBRE ===== */
+    .about {
+      max-width: 760px;
+    }
+
+    /* ===== RESPONSIVO SIMPLES (SEM INVENTAR DESIGN) ===== */
+    @media (max-width: 1200px) {
+      .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       }
     }
   </style>
 </head>
+
 <body>
+  <main>
 
-  <div class="container">
-
-    <!-- HEADER -->
-    <header>
+    <!-- HERO -->
+    <section class="hero">
       <h1>Paloma Santos</h1>
-      <h2>Análise de Dados | Inteligência de Mercado | Modelagem Analítica</h2>
-    </header>
+      <p class="subtitle">
+        Análise de Dados | Inteligência de Mercado | Modelagem Analítica
+      </p>
+      <p class="description">
+        Atuo com análise de dados aplicada ao negócio, transformando bases operacionais
+        em informações claras para apoiar decisões estratégicas. Trabalho desde a validação
+        e organização dos dados até a construção de indicadores e dashboards executivos,
+        com foco em vendas, reservas, margens e performance de produtos no setor de turismo.
+      </p>
+    </section>
 
-    <!-- SOBRE MIM -->
+    <!-- O QUE EU FAÇO -->
     <section>
-      <h3>Sobre Mim</h3>
-      <p>
-        Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro de 2024,
-        com experiência prática na estruturação completa de projetos analíticos desde
-        o tratamento e modelagem dos dados até a construção de dashboards e apresentação executiva.
+      <h2 class="section-title">O que eu faço</h2>
+      <p class="what-i-do">
+        Trabalho com dados como ferramenta de entendimento do negócio e apoio à tomada de decisão.
+        Minha atuação envolve analisar o desempenho comercial, identificar padrões e desvios,
+        estruturar métricas consistentes e traduzir informações complexas em visualizações acessíveis
+        para diferentes áreas da empresa.
+        <br /><br />
+        Atuo desde o tratamento e modelagem das bases até o desenvolvimento de dashboards em Power BI,
+        utilizando DAX, Power Query e Excel. Também utilizo SQL básico, Python e automações com n8n
+        para tornar os processos analíticos mais eficientes e confiáveis.
       </p>
     </section>
 
     <!-- EXPERIÊNCIA -->
     <section>
-      <h3>Experiência</h3>
-
+      <h2 class="section-title">Experiência</h2>
       <div class="card experience-card">
-        <h4>Analista Jr de Inteligência de Mercado</h4>
-        <span>2024 – atual</span>
+        <div>
+          <h3>Analista Jr de Inteligência de Mercado</h3>
+          <span>2024 – atual</span>
+        </div>
         <p>
           Trabalho com dados como ferramenta de entendimento e apoio à tomada de decisão.
-          Meu foco está na análise, na modelagem de dados, no raciocínio lógico e na estatística aplicada,
-          sempre com uma leitura crítica das informações antes da visualização. Atuo com Análise de Dados
-          e Inteligência de Mercado desde fevereiro de 2024, estruturando análises de ponta a ponta,
-          do tratamento e organização dos dados à construção de métricas, modelos analíticos e dashboards executivos.
+          Meu foco está na análise, modelagem de dados, raciocínio lógico e estatística aplicada,
+          sempre com uma leitura crítica das informações antes da visualização. Atuo estruturando
+          análises de ponta a ponta, do tratamento dos dados à construção de métricas e dashboards executivos.
         </p>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section>
+      <h2 class="section-title">Projetos</h2>
+      <div class="projects">
+        <div class="card project-card">
+          <h3>Análise de Performance de Vendas e Reservas</h3>
+          <p>
+            Análise focada no acompanhamento do desempenho comercial, com validação das bases,
+            definição de métricas-chave e construção de dashboards para identificar variações
+            relevantes ao longo do tempo.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <h3>Dashboard de Margens e Rentabilidade</h3>
+          <p>
+            Projeto voltado à análise de margens e rentabilidade dos produtos, com modelagem
+            de dados e medidas em DAX para apoiar decisões estratégicas.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <h3>Monitoramento de Indicadores de Performance</h3>
+          <p>
+            Consolidação de indicadores estratégicos com foco em padronização, consistência
+            dos cálculos e apresentação clara para áreas internas e diretoria.
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- SKILLS -->
     <section>
-      <h3>Skills</h3>
+      <h2 class="section-title">Skills</h2>
 
-      <div class="cards">
-        <div class="card skill-card">
-          <h4>Linguagens</h4>
-          <p>Python, JavaScript, SQL, R</p>
+      <div class="skills-group">
+        <h3>Linguagens</h3>
+        <div class="skills-grid">
+          <div class="card skill-card">Python</div>
+          <div class="card skill-card">JavaScript</div>
+          <div class="card skill-card">SQL</div>
+          <div class="card skill-card">R</div>
         </div>
+      </div>
 
-        <div class="card skill-card">
-          <h4>Ferramentas</h4>
-          <p>Docker, Power BI, Git, Looker Studio</p>
+      <div class="skills-group">
+        <h3>Ferramentas</h3>
+        <div class="skills-grid">
+          <div class="card skill-card">Power BI</div>
+          <div class="card skill-card">Git</div>
+          <div class="card skill-card">Docker</div>
+          <div class="card skill-card">Looker Studio</div>
         </div>
       </div>
     </section>
 
     <!-- SERVIÇOS -->
     <section>
-      <h3>Serviços</h3>
-
-      <div class="cards">
+      <h2 class="section-title">Serviços</h2>
+      <div class="services">
         <div class="card service-card">
-          <h4>Criação de Dashboards</h4>
+          <h3>Criação de Dashboards</h3>
           <p>
-            Criação de dashboards interativos em Power BI e Looker Studio
-            com foco em indicadores de negócio e tomada de decisão.
+            Desenvolvimento de dashboards interativos em Power BI e Looker Studio
+            com foco em indicadores de negócio e apoio à tomada de decisão.
           </p>
         </div>
 
         <div class="card service-card">
-          <h4>Automações</h4>
+          <h3>Automações</h3>
           <p>
             Desenvolvimento de automações para integração de sistemas e orquestração
-            de processos analíticos, reduzindo tarefas manuais e garantindo maior eficiência,
-            consistência e escalabilidade no uso dos dados por meio de fluxos no n8n.
+            de processos analíticos, reduzindo tarefas manuais e aumentando eficiência
+            por meio de fluxos no n8n.
           </p>
         </div>
       </div>
     </section>
 
-  </div>
+    <!-- SOBRE -->
+    <section>
+      <h2 class="section-title">Sobre mim</h2>
+      <p class="about">
+        Sou Analista Jr de Inteligência de Mercado em uma empresa de turismo, com atuação focada
+        em análise de dados aplicada ao negócio. Trabalho com Power BI, DAX, Power Query, Excel,
+        SQL básico, Python e automações com n8n, apresentando análises e dashboards para áreas
+        internas e diretoria.
+      </p>
+    </section>
 
-  <!-- JS MÍNIMO – apenas para manter paridade estrutural -->
+  </main>
+
   <script>
-    // Nenhuma lógica adicional propositalmente.
-    // O site de referência também é majoritariamente estático.
+    // JS mantido mínimo, apenas para futuras interações se necessário
+    console.log("Portfólio Paloma Santos carregado com sucesso.");
   </script>
-
 </body>
 </html>
