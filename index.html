@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paloma Santos | Análise de Dados</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -15,20 +15,22 @@
   --texto: #7F5836;
   --icone: #6B7556;
   --branco: #ffffff;
-  --hover-borda: #C87D87;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Inter, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--fundo);
   color: var(--texto);
-  scroll-behavior: smooth;
 }
 
 /* NAVBAR */
@@ -37,169 +39,153 @@ nav {
   top: 0;
   width: 100%;
   background: rgba(229,188,169,0.95);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
   z-index: 1000;
 }
 
 nav ul {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
   list-style: none;
-  padding: 16px 0;
+  padding: 20px 0;
 }
 
 nav a {
-  color: var(--texto);
   text-decoration: none;
-  font-size: 15px;
-  padding-bottom: 6px;
-  position: relative;
+  color: var(--texto);
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: 0.3s;
 }
 
-nav a.active::after,
-nav a:hover::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: var(--titulo);
-  left: 0;
-  bottom: 0;
+nav a:hover {
+  color: var(--titulo);
 }
 
-/* SEÇÕES — ALTERAÇÃO AQUI */
+/* SECTIONS */
 section {
-  padding: 90px 8% 27px;
+  padding: 120px 10%;
 }
 
 .section-title {
   text-align: center;
-  font-size: 36px;
+  font-size: 38px;
   color: var(--titulo);
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
-/* INÍCIO */
+/* HERO */
 #inicio {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
 #inicio h1 {
-  font-size: 58px;
+  font-size: 64px;
   color: var(--branco);
+  font-weight: 700;
 }
 
 #inicio h2 {
-  margin-top: 12px;
-  font-size: 20px;
+  font-size: 18px;
+  margin-top: 18px;
   color: var(--titulo);
+  font-weight: 400;
 }
 
 #inicio p {
-  max-width: 760px;
-  margin-top: 28px;
-  line-height: 1.75;
-  font-size: 17px;
+  max-width: 800px;
+  margin: 30px auto 0;
+  line-height: 1.8;
 }
 
 /* SOBRE */
 #sobre p {
   max-width: 900px;
   margin: auto;
-  font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.9;
   text-align: center;
 }
 
-/* EXPERIÊNCIAS */
-#experiencias {
-  padding-top: 60px;
+/* EXPERIÊNCIA */
+.exp-container {
+  display: flex;
+  justify-content: center;
 }
 
 .exp-card {
-  background: var(--fundo-card);
   width: 890px;
   height: 240px;
-  margin: auto;
-  padding: 35px;
-  border-radius: 25px;
-  position: relative;
+  background: var(--fundo-card);
+  border-radius: 24px;
+  padding: 40px;
+  transition: all 0.4s ease;
   border: 2px solid transparent;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
 }
 
 .exp-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 35px rgba(0,0,0,0.18);
-  border: 2px solid var(--hover-borda);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+  border: 2px solid var(--titulo);
+  background: #f9dfc7;
 }
 
 .exp-card h3 {
   color: var(--titulo);
-  font-size: 22px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .exp-card span {
-  position: absolute;
-  top: 25px;
-  right: 30px;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .exp-card p {
-  line-height: 1.7;
+  margin-top: 20px;
+  line-height: 1.8;
 }
 
 /* SKILLS */
-.sub-title {
+.skills-group {
+  margin-bottom: 60px;
+}
+
+.skills-group h3 {
   text-align: center;
-  font-size: 22px;
+  margin-bottom: 30px;
   color: var(--titulo);
-  margin-bottom: 24px;
+  font-weight: 500;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 385px);
   justify-content: center;
-  gap: 28px;
-  margin-bottom: 40px;
+  gap: 30px;
 }
 
 .skill-card {
-  background: var(--fundo-card);
   width: 385px;
   height: 123px;
+  background: var(--fundo-card);
   border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  color: var(--titulo);
-  font-size: 17px;
-  position: relative;
+  transition: all 0.4s ease;
   border: 2px solid transparent;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
-}
-
-.skill-card i {
-  position: absolute;
-  top: 14px;
-  left: 16px;
-  font-size: 22px;
-  color: var(--icone);
 }
 
 .skill-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 35px rgba(0,0,0,0.18);
-  border: 2px solid var(--hover-borda);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.25);
+  border: 2px solid var(--titulo);
+  background: #f9dfc7;
 }
 
 /* SERVIÇOS */
@@ -207,59 +193,40 @@ section {
   display: flex;
   justify-content: center;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
 .service-card {
-  background: var(--fundo-card);
   width: 530px;
   height: 230px;
-  border-radius: 25px;
-  padding: 35px;
+  background: var(--fundo-card);
+  border-radius: 24px;
+  padding: 40px;
+  transition: all 0.4s ease;
   border: 2px solid transparent;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 35px rgba(0,0,0,0.18);
-  border: 2px solid var(--hover-borda);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+  border: 2px solid var(--titulo);
+  background: #f9dfc7;
 }
 
 .service-card h3 {
   color: var(--titulo);
-  font-size: 22px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .service-card p {
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
-/* CONTATO */
-.contact-card {
-  background: var(--fundo-card);
-  max-width: 420px;
-  margin: auto;
-  padding: 35px;
-  border-radius: 25px;
+/* FOOTER */
+footer {
   text-align: center;
-}
-
-.contact-item {
-  margin-bottom: 18px;
-}
-
-.contact-item i {
-  font-size: 22px;
-  color: var(--icone);
-  margin-bottom: 6px;
-}
-
-.contact-item p,
-.contact-item a {
-  color: var(--titulo);
-  text-decoration: none;
-  font-weight: 500;
+  padding: 40px 0;
+  font-size: 14px;
 }
 </style>
 </head>
@@ -268,68 +235,62 @@ section {
 
 <nav>
   <ul>
-    <li><a href="#inicio" class="active">Início</a></li>
-    <li><a href="#skills">Habilidades</a></li>
-    <li><a href="#portfolio">Portfólio</a></li>
-    <li><a href="#contato">Contato</a></li>
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#experiencia">Experiência</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#servicos">Serviços</a></li>
   </ul>
 </nav>
 
 <section id="inicio">
   <h1>Paloma Santos</h1>
   <h2>Análise de Dados | Inteligência de Mercado | Modelagem Analítica</h2>
-  <p>
-    Trabalho com dados como instrumento de investigação e tomada de decisão.
-    Meu foco está na modelagem de dados, análise estatística aplicada,
-    construção de métricas estratégicas e interpretação crítica das informações
-    para gerar impacto real no negócio.
-  </p>
 </section>
 
 <section id="sobre">
-  <h2 class="section-title">Sobre mim</h2>
+  <h2 class="section-title">Sobre Mim</h2>
   <p>
-    Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro de 2024,
-    com experiência prática na estruturação completa de projetos analíticos
-    desde o tratamento e modelagem dos dados até a construção de dashboards
-    e apresentação executiva.
+    Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro de 2024, com experiência prática na estruturação completa de projetos analíticos desde o tratamento e modelagem dos dados até a construção de dashboards e apresentação executiva.
   </p>
 </section>
 
-<section id="experiencias">
-  <h2 class="section-title">Experiencias</h2>
-  <div class="exp-card">
-    <h3>Analista Jr de Inteligencia de Mercado</h3>
-    <span>2024 - atual</span>
-    <p>
-      Trabalho com dados como ferramenta de entendimento e apoio à tomada de decisão.
-      Meu foco está na análise, na modelagem de dados, no raciocínio lógico e na
-      estatística aplicada, sempre com uma leitura crítica das informações antes da
-      visualização. Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro
-      de 2024, estruturando análises de ponta a ponta, do tratamento e organização dos
-      dados à construção de métricas, modelos analíticos e dashboards executivos.
-    </p>
+<section id="experiencia">
+  <h2 class="section-title">Experiência</h2>
+  <div class="exp-container">
+    <div class="exp-card">
+      <h3>Analista Jr de Inteligência de Mercado</h3>
+      <span>2024 – atual</span>
+      <p>
+        Trabalho com dados como ferramenta de entendimento e apoio à tomada de decisão. Meu foco está na análise, na modelagem de dados, no raciocínio lógico e na estatística aplicada, sempre com uma leitura crítica das informações antes da visualização. Atuo com Análise de Dados e Inteligência de Mercado desde fevereiro de 2024, estruturando análises de ponta a ponta, do tratamento e organização dos dados à construção de métricas, modelos analíticos e dashboards executivos.
+      </p>
+    </div>
   </div>
 </section>
 
 <section id="skills">
-  <h2 class="section-title">Skills Técnicas</h2>
-  <h3 class="sub-title">Ferramentas</h3>
-  <div class="cards">
-    <div class="skill-card"><i class="fa-solid fa-chart-column"></i>Power BI</div>
-    <div class="skill-card"><i class="fa-solid fa-file-excel"></i>Excel</div>
-    <div class="skill-card"><i class="fa-solid fa-database"></i>Power Query</div>
-    <div class="skill-card"><i class="fa-solid fa-diagram-project"></i>Looker Studio</div>
-    <div class="skill-card"><i class="fa-brands fa-github"></i>GitHub</div>
-    <div class="skill-card"><i class="fa-solid fa-gear"></i>n8n</div>
+  <h2 class="section-title">Skills</h2>
+
+  <div class="skills-group">
+    <h3>Linguagens</h3>
+    <div class="cards">
+      <div class="skill-card">Python</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">SQL</div>
+      <div class="skill-card">R</div>
+    </div>
   </div>
 
-  <h3 class="sub-title">Linguagens</h3>
-  <div class="cards">
-    <div class="skill-card"><i class="fa-solid fa-database"></i>SQL</div>
-    <div class="skill-card"><i class="fa-brands fa-python"></i>Python</div>
-    <div class="skill-card"><i class="fa-solid fa-calculator"></i>DAX</div>
+  <div class="skills-group">
+    <h3>Ferramentas</h3>
+    <div class="cards">
+      <div class="skill-card">Docker</div>
+      <div class="skill-card">Power BI</div>
+      <div class="skill-card">Git</div>
+      <div class="skill-card">Looker Studio</div>
+    </div>
   </div>
+
 </section>
 
 <section id="servicos">
@@ -337,47 +298,22 @@ section {
   <div class="services">
     <div class="service-card">
       <h3>Criação de Dashboards</h3>
-      <p>Criação de dashboards interativos em Power BI e Looker Studio.</p>
+      <p>
+        Criação de dashboards interativos em Power BI e Looker Studio com foco em indicadores de negócio e tomada de decisão.
+      </p>
     </div>
     <div class="service-card">
       <h3>Automações</h3>
-      <p>Automação de processos analíticos utilizando n8n.</p>
+      <p>
+        Desenvolvimento de automações para integração de sistemas e orquestração de processos analíticos, reduzindo tarefas manuais e garantindo maior eficiência, consistência e escalabilidade no uso dos dados por meio de fluxos no n8n.
+      </p>
     </div>
   </div>
 </section>
 
-<section id="portfolio">
-  <h2 class="section-title">Portfólio</h2>
-  <p style="text-align:center;">Projetos em estruturação.</p>
-</section>
-
-<section id="contato">
-  <h2 class="section-title">Contato</h2>
-  <div class="contact-card">
-    <div class="contact-item">
-      <i class="fa-solid fa-envelope"></i>
-      <p>palomasantosmaster@gmail.com</p>
-    </div>
-    <div class="contact-item">
-      <i class="fa-solid fa-phone"></i>
-      <p>(11) 96199-0271</p>
-    </div>
-    <div class="contact-item">
-      <i class="fa-brands fa-linkedin"></i>
-      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-    </div>
-  </div>
-</section>
-
-<script>
-const links = document.querySelectorAll("nav a");
-links.forEach(link => {
-  link.addEventListener("click", () => {
-    links.forEach(l => l.classList.remove("active"));
-    link.classList.add("active");
-  });
-});
-</script>
+<footer>
+  © 2026 Paloma Santos
+</footer>
 
 </body>
 </html>
