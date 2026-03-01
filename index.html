@@ -1,262 +1,185 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <title>Paloma Santos | Portfólio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paloma Santos | Portfólio</title>
 
-  <!-- Font Awesome -->
+  <!-- Ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
-    /* ================= RESET ================= */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
     }
 
     body {
-      font-family: "Inter", Arial, sans-serif;
-      background: #F0C4CB;
+      background-color: #E5BCA9;
       color: #6B7556;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     section {
-      padding: 96px 8%;
+      padding: 60px 8%;
     }
 
     h1, h2, h3 {
-      font-weight: 600;
       color: #6B7556;
     }
 
     h2 {
-      font-size: 32px;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
+      font-size: 2rem;
     }
 
     p {
-      font-size: 16px;
-      color: #6B7556;
+      max-width: 900px;
     }
 
-    /* ================= HERO ================= */
-    #hero {
-      background: linear-gradient(135deg, #FBEAD6, #F0C4CB);
-      opacity: 0.95;
-      display: flex;
-      align-items: center;
-      min-height: 100vh;
+    /* HERO */
+    .hero h1 {
+      font-size: 3rem;
     }
 
-    .hero-content {
-      max-width: 760px;
-    }
-
-    .hero-content h1 {
-      font-size: 54px;
-      margin-bottom: 12px;
-    }
-
-    .hero-content h3 {
-      font-size: 18px;
-      font-weight: 500;
+    .subtitle {
       color: #C87D87;
-      margin-bottom: 20px;
+      margin: 12px 0 20px;
+      font-size: 1.2rem;
     }
 
-    .hero-social {
-      margin-bottom: 28px;
-    }
-
-    .hero-social a {
-      font-size: 24px;
+    .linkedin {
+      font-size: 2rem;
       color: #6B7556;
       display: inline-block;
       transition: all 0.3s ease;
+      margin-bottom: 20px;
     }
 
-    .hero-social a:hover {
+    .linkedin:hover {
       color: #C87D87;
-      transform: scale(1.15);
+      transform: scale(1.1);
     }
 
-    /* ================= O QUE FAÇO ================= */
-    #o-que-faco {
-      background: rgba(240,196,203,0.9);
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 64px;
+    /* SOBRE MIM */
+    .about {
+      display: flex;
+      gap: 40px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
-    .photo-wrapper {
-      width: 260px;
-      height: 260px;
+    .about-text {
+      flex: 1;
+    }
+
+    .profile-wrapper {
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       padding: 6px;
-      background: conic-gradient(
-        #F0C4CB,
-        #C87D87,
-        #E5BCA9,
-        #F0C4CB
-      );
-      animation: spin 12s linear infinite;
-      justify-self: center;
+      background: linear-gradient(270deg, #F0C4CB, #C87D87, #E5BCA9);
+      background-size: 600% 600%;
+      animation: rotateGradient 6s ease infinite;
     }
 
-    .photo-wrapper img {
+    .profile-wrapper img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      display: block;
     }
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    @keyframes rotateGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    /* ================= EXPERIÊNCIA ================= */
-    #experiencia {
+    /* CARDS */
+    .card {
       background: #FBEAD6;
-    }
-
-    .exp-card {
-      background: #E5BCA9;
-      border: 1px solid #C87D87;
-      border-radius: 16px;
-      padding: 36px;
-      max-width: 900px;
+      border: 2px solid #C87D87;
+      border-radius: 12px;
+      padding: 24px;
       transition: all 0.3s ease;
     }
 
-    .exp-card:hover {
+    .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 35px rgba(0,0,0,0.18);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
     }
 
-    .exp-card span {
-      display: block;
+    /* EXPERIÊNCIA */
+    .experience-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .period {
       color: #C87D87;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
+      display: block;
     }
 
-    /* ================= SKILLS ================= */
-    #skills {
-      background: #F0C4CB;
-    }
-
-    .skills-group {
-      margin-bottom: 56px;
-    }
-
+    /* SKILLS */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.1rem;
+    }
+
+    .skill-item i {
+      font-size: 1.8rem;
+      color: #6B7556;
+      transition: color 0.3s ease;
+    }
+
+    .skill-item:hover i {
+      color: #C87D87;
+    }
+
+    /* SERVIÇOS */
+    .services {
+      display: flex;
+      gap: 30px;
+      flex-wrap: nowrap;
+    }
+
+    /* PROJETOS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
     }
 
-    .skill-card {
-      background: #E5BCA9;
-      border: 1px solid #C87D87;
-      border-radius: 14px;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 30px rgba(0,0,0,0.18);
-    }
-
-    /* ================= SERVIÇOS ================= */
-    #servicos {
-      background: #FBEAD6;
-    }
-
-    .services {
-      display: flex;
-      gap: 32px;
-    }
-
-    .service-card {
-      flex: 1;
-      background: #E5BCA9;
-      border: 1px solid #C87D87;
-      border-radius: 16px;
-      padding: 32px;
-      transition: all 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 35px rgba(0,0,0,0.18);
-    }
-
-    /* ================= PROJETOS ================= */
-    #projetos {
-      background: #F0C4CB;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-
-    .project-card {
-      background: #E5BCA9;
-      border: 1px solid #C87D87;
-      border-radius: 16px;
-      padding: 28px;
-      transition: all 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 35px rgba(0,0,0,0.18);
-    }
-
-    /* ================= CONTATO ================= */
-    #contato {
-      background: #FBEAD6;
+    /* CONTATO */
+    .contact {
+      min-height: 50vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 70vh;
+      align-items: center;
       text-align: center;
     }
 
     .contact-card {
-      margin-top: 24px;
-      background: #E5BCA9;
-      border: 1px solid #C87D87;
-      border-radius: 14px;
-      padding: 24px 36px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 16px;
+      margin-top: 20px;
+      font-size: 1.2rem;
     }
 
-    /* ================= RESPONSIVO ================= */
-    @media (max-width: 900px) {
-      #o-que-faco {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .services, .projects, .skills-grid {
-        grid-template-columns: 1fr;
-        flex-direction: column;
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      .services {
+        flex-wrap: wrap;
       }
     }
   </style>
@@ -265,154 +188,122 @@
 <body>
 
   <!-- HERO -->
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Paloma Santos</h1>
-      <h3>Análise de Dados | Inteligência de Mercado | Modelagem Analítica</h3>
+  <section class="hero">
+    <h1>Paloma Santos</h1>
+    <div class="subtitle">Análise de Dados | Inteligência de Mercado | Modelagem Analítica</div>
 
-      <div class="hero-social">
-        <a href="https://www.linkedin.com/in/paloma-araújo-579289209" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </div>
+    <a class="linkedin" href="https://www.linkedin.com/in/paloma-araújo-579289209" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
 
-      <p>
-        Atuo com análise de dados aplicada ao negócio, transformando bases operacionais
-        em informações claras para apoiar decisões estratégicas. Trabalho desde a
-        validação e organização dos dados até a construção de indicadores e dashboards
-        executivos, com foco em vendas, reservas, margens e performance de produtos no
-        setor de turismo.
-      </p>
-    </div>
+    <p>
+      Atuo com análise de dados aplicada ao negócio, transformando bases operacionais em informações claras para apoiar decisões estratégicas. Trabalho desde a validação e organização dos dados até a construção de indicadores e dashboards executivos, com foco em vendas, reservas, margens e performance de produtos no setor de turismo.
+    </p>
   </section>
 
-  <!-- O QUE FAÇO -->
-  <section id="o-que-faco">
-    <div>
-      <h2>O que faço</h2>
-      <p>
-        Trabalho com dados como ferramenta de entendimento do negócio e apoio à tomada
-        de decisão. Minha atuação envolve analisar o desempenho comercial, identificar
-        padrões e desvios, estruturar métricas consistentes e traduzir informações
-        complexas em visualizações acessíveis para diferentes áreas da empresa.
-      </p>
-      <br />
-      <p>
-        Atuo desde o tratamento e modelagem das bases até o desenvolvimento de dashboards
-        em Power BI, utilizando DAX, Power Query e Excel. Também utilizo SQL básico,
-        Python e automações com n8n para tornar os processos analíticos mais eficientes
-        e confiáveis.
-      </p>
-    </div>
+  <!-- SOBRE MIM -->
+  <section>
+    <h2>Sobre mim</h2>
+    <div class="about">
+      <div class="about-text">
+        <p>
+          Trabalho com dados como ferramenta de entendimento do negócio e apoio à tomada de decisão. Minha atuação envolve analisar o desempenho comercial, identificar padrões e desvios, estruturar métricas consistentes e traduzir informações complexas em visualizações acessíveis para diferentes áreas da empresa.
+          <br><br>
+          Atuo desde o tratamento e modelagem das bases até o desenvolvimento de dashboards em Power BI, utilizando DAX, Power Query e Excel. Também utilizo SQL básico, Python e automações com n8n para tornar os processos analíticos mais eficientes e confiáveis.
+        </p>
+      </div>
 
-    <div class="photo-wrapper">
-      <img src="blob:https://web.whatsapp.com/67694440-cf9c-4d29-9aa5-5163f2fe1b2b" alt="Foto Paloma Santos" />
+      <div class="profile-wrapper">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Foto de perfil">
+      </div>
     </div>
   </section>
 
   <!-- EXPERIÊNCIA -->
-  <section id="experiencia">
+  <section>
     <h2>Experiência</h2>
-    <div class="exp-card">
+    <div class="card experience-card">
       <h3>Analista Jr de Inteligência de Mercado</h3>
-      <span>2024 – atual</span>
+      <span class="period">2024 – atual</span>
       <p>
-        Trabalho com dados como ferramenta de entendimento e apoio à tomada de decisão.
-        Meu foco está na análise, modelagem de dados, raciocínio lógico e estatística
-        aplicada, sempre com uma leitura crítica das informações antes da visualização.
-        Atuo estruturando análises de ponta a ponta, do tratamento dos dados à
-        construção de métricas e dashboards executivos.
+        Trabalho com dados como ferramenta de entendimento e apoio à tomada de decisão. Meu foco está na análise, modelagem de dados, raciocínio lógico e estatística aplicada, sempre com uma leitura crítica das informações antes da visualização. Atuo estruturando análises de ponta a ponta, do tratamento dos dados à construção de métricas e dashboards executivos.
       </p>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills">
+  <section>
     <h2>Skills</h2>
 
-    <div class="skills-group">
-      <h3>Linguagens</h3>
-      <div class="skills-grid">
-        <div class="skill-card">Python</div>
-        <div class="skill-card">JavaScript</div>
-        <div class="skill-card">SQL</div>
-        <div class="skill-card">R</div>
-      </div>
+    <h3>Linguagens</h3>
+    <div class="skills-grid">
+      <div class="card skill-item"><i class="fab fa-python"></i> Python</div>
+      <div class="card skill-item"><i class="fas fa-database"></i> SQL</div>
     </div>
 
-    <div class="skills-group">
-      <h3>Ferramentas</h3>
-      <div class="skills-grid">
-        <div class="skill-card">Power BI</div>
-        <div class="skill-card">Git</div>
-        <div class="skill-card">Docker</div>
-        <div class="skill-card">Looker Studio</div>
-        <div class="skill-card">Figma</div>
-      </div>
+    <br>
+
+    <h3>Ferramentas</h3>
+    <div class="skills-grid">
+      <div class="card skill-item"><i class="fas fa-chart-bar"></i> Power BI</div>
+      <div class="card skill-item"><i class="fab fa-git-alt"></i> Git</div>
+      <div class="card skill-item"><i class="fas fa-chart-pie"></i> Looker Studio</div>
+      <div class="card skill-item"><i class="fab fa-figma"></i> Figma</div>
     </div>
   </section>
 
   <!-- SERVIÇOS -->
-  <section id="servicos">
+  <section>
     <h2>Serviços</h2>
     <div class="services">
-      <div class="service-card">
+      <div class="card">
         <h3>Criação de Dashboards</h3>
         <p>
-          Desenvolvimento de dashboards interativos em Power BI e Looker Studio com foco
-          em indicadores de negócio e apoio à tomada de decisão.
+          Desenvolvimento de dashboards interativos em Power BI e Looker Studio com foco em indicadores de negócio e apoio à tomada de decisão.
         </p>
       </div>
 
-      <div class="service-card">
+      <div class="card">
         <h3>Automações</h3>
         <p>
-          Desenvolvimento de automações para integração de sistemas e orquestração de
-          processos analíticos, reduzindo tarefas manuais e aumentando eficiência por
-          meio de fluxos no n8n.
+          Desenvolvimento de automações para integração de sistemas e orquestração de processos analíticos, reduzindo tarefas manuais e aumentando eficiência por meio de fluxos no n8n.
         </p>
       </div>
     </div>
   </section>
 
   <!-- PROJETOS -->
-  <section id="projetos">
+  <section>
     <h2>Projetos</h2>
     <div class="projects">
-      <div class="project-card">
+      <div class="card">
         <h3>Análise de Performance de Vendas e Reservas</h3>
         <p>
-          Análise focada no acompanhamento do desempenho comercial, com validação das
-          bases, definição de métricas-chave e construção de dashboards para identificar
-          variações relevantes ao longo do tempo.
+          Análise focada no acompanhamento do desempenho comercial, com validação das bases, definição de métricas-chave e construção de dashboards para identificar variações relevantes ao longo do tempo.
         </p>
       </div>
 
-      <div class="project-card">
+      <div class="card">
         <h3>Dashboard de Margens e Rentabilidade</h3>
         <p>
-          Projeto voltado à análise de margens e rentabilidade dos produtos, com
-          modelagem de dados e medidas em DAX para apoiar decisões estratégicas.
+          Projeto voltado à análise de margens e rentabilidade dos produtos, com modelagem de dados e medidas em DAX para apoiar decisões estratégicas.
         </p>
       </div>
 
-      <div class="project-card">
+      <div class="card">
         <h3>Monitoramento de Indicadores de Performance</h3>
         <p>
-          Consolidação de indicadores estratégicos com foco em padronização,
-          consistência dos cálculos e apresentação clara para áreas internas e
-          diretoria.
+          Consolidação de indicadores estratégicos com foco em padronização, consistência dos cálculos e apresentação clara para áreas internas e diretoria.
         </p>
       </div>
     </div>
   </section>
 
   <!-- CONTATO -->
-  <section id="contato">
+  <section class="contact">
     <h2>Contato</h2>
-    <div class="contact-card">
-      <span>📧</span>
-      <span>palomasantosmaster@gmail.com</span>
+    <div class="card contact-card">
+      📧 palomasantosmaster@gmail.com
     </div>
   </section>
 
