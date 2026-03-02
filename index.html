@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Paloma Santos</title>
 
-  <!-- Ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
@@ -35,7 +34,6 @@
       font-size: 32px;
     }
 
-    /* HERO */
     .hero {
       display: flex;
       flex-direction: column;
@@ -63,7 +61,6 @@
       transform: scale(1.1);
     }
 
-    /* CARDS */
     .card {
       background: #FBEAD6;
       border: 2px solid #C87D87;
@@ -77,7 +74,6 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
-    /* SOBRE MIM */
     .about {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -107,7 +103,6 @@
       to { transform: rotate(360deg); }
     }
 
-    /* SKILLS */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -131,20 +126,17 @@
       color: #C87D87;
     }
 
-    /* SERVIÇOS */
     .services {
       display: flex;
       gap: 30px;
     }
 
-    /* PROJETOS */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
     }
 
-    /* CONTATO */
     .contact {
       display: flex;
       flex-direction: column;
@@ -153,7 +145,6 @@
       text-align: center;
     }
 
-    /* RESPONSIVO */
     @media (max-width: 900px) {
       .about {
         grid-template-columns: 1fr;
@@ -172,7 +163,6 @@
 </head>
 <body>
 
-  <!-- HERO -->
   <section class="hero">
     <h1>Paloma Santos</h1>
     <h3>Análise de Dados | Inteligência de Mercado | Modelagem Analítica</h3>
@@ -186,7 +176,6 @@
     </p>
   </section>
 
-  <!-- SOBRE MIM -->
   <section>
     <h2>Sobre mim</h2>
 
@@ -205,7 +194,6 @@
     </div>
   </section>
 
-  <!-- EXPERIÊNCIA -->
   <section>
     <h2>Experiência</h2>
 
@@ -218,7 +206,6 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section>
     <h2>Skills</h2>
 
@@ -232,7 +219,6 @@
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
   <section>
     <h2>Serviços</h2>
 
@@ -253,35 +239,21 @@
     </div>
   </section>
 
-  <!-- PROJETOS -->
   <section>
     <h2>Projetos</h2>
 
     <div class="projects">
-      <div class="card">
-        <h3>Análise de Performance de Vendas e Reservas</h3>
-        <p>
-          Análise focada no acompanhamento do desempenho comercial, com validação das bases, definição de métricas-chave e construção de dashboards para identificar variações relevantes ao longo do tempo.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Dashboard de Margens e Rentabilidade</h3>
-        <p>
-          Projeto voltado à análise de margens e rentabilidade dos produtos, com modelagem de dados e medidas em DAX para apoiar decisões estratégicas.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Monitoramento de Indicadores de Performance</h3>
-        <p>
-          Consolidação de indicadores estratégicos com foco em padronização, consistência dos cálculos e apresentação clara para áreas internas e diretoria.
-        </p>
-      </div>
+      <a href="dashboard.html" style="text-decoration:none; color:inherit;">
+        <div class="card">
+          <h3>Análise de Performance de Vendas e Reservas</h3>
+          <p>
+            Análise focada no acompanhamento do desempenho comercial, com validação das bases, definição de métricas-chave e construção de dashboards para identificar variações relevantes ao longo do tempo.
+          </p>
+        </div>
+      </a>
     </div>
   </section>
 
-  <!-- CONTATO -->
   <section class="contact">
     <h2>Contato</h2>
 
