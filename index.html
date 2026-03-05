@@ -1,296 +1,507 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<html lang="pt-BR">
 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Paloma Santos | Portfólio</title>
+<title>Paloma Santos</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter, sans-serif;
+}
+
 body{
 background:#1f1f1f;
-font-family:Arial, Helvetica, sans-serif;
-margin:0;
 padding:40px;
-color:#222;
 }
 
-.page{
-max-width:1100px;
+.grid{
+max-width:1200px;
 margin:auto;
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:24px;
+grid-template-columns:repeat(12,1fr);
+gap:26px;
 }
+
+/* CARD PADRÃO */
 
 .card{
-background:#e9e3d8;
-border-radius:20px;
-padding:28px;
+background:#EFECE3;
+border:4px solid #000;
+border-radius:24px;
+padding:26px;
+color:#000;
 }
 
-.full{
-grid-column:1 / -1;
-}
+/* CONTACT BAR */
 
-h1{
-font-size:38px;
-margin-bottom:10px;
-}
-
-h2{
-font-size:22px;
-margin-bottom:10px;
-}
-
-h3{
-font-size:18px;
-margin-bottom:12px;
-}
-
-p{
-font-size:16px;
-line-height:1.6;
-}
-
-.hero-icons{
-margin-top:12px;
-}
-
-.hero-icons i{
-font-size:22px;
-margin-right:12px;
-color:#e38ba5;
-}
-
-.button{
-margin-top:16px;
-background:#e38ba5;
-border:none;
-padding:12px 22px;
-border-radius:20px;
-cursor:pointer;
+.contact-bar{
+grid-column:span 12;
+display:flex;
+justify-content:space-between;
+align-items:center;
 font-size:14px;
 }
 
-.contact{
+/* HERO */
+
+.hero-left{
+grid-column:span 7;
+}
+
+.hero-left h1{
+font-size:52px;
+font-weight:800;
+}
+
+.hero-left h3{
+margin-top:8px;
+font-weight:500;
+font-size:18px;
+}
+
+.hero-icons{
+margin-top:18px;
 display:flex;
-justify-content:space-between;
+gap:18px;
+font-size:22px;
+}
+
+.hero-left button{
+margin-top:18px;
+padding:12px 24px;
+border:none;
+border-radius:30px;
+background:#000;
+color:#fff;
+cursor:pointer;
+}
+
+.hero-left p{
+margin-top:18px;
+line-height:1.6;
 font-size:15px;
 }
 
-.about{
+.hero-right{
+grid-column:span 5;
 display:flex;
-gap:24px;
+align-items:center;
+justify-content:center;
+}
+
+.hero-right img{
+width:100%;
+border-radius:18px;
+}
+
+/* ABOUT */
+
+.about-card{
+grid-column:span 12;
+display:grid;
+grid-template-columns:1fr 320px;
+gap:30px;
 align-items:center;
 }
 
-.about img{
-width:150px;
-border-radius:14px;
+.photo-wrapper img{
+width:100%;
+border-radius:18px;
 }
 
-.metrics{
+/* ABOUT STATS */
+
+.about-cards{
+margin-top:20px;
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:repeat(4,1fr);
 gap:14px;
-font-size:16px;
 }
 
-.services p{
-margin-bottom:14px;
+.highlight{
+font-size:28px;
+font-weight:700;
+margin-top:8px;
 }
 
-.split{
+/* SERVICES + EDUCATION STYLE ROW */
+
+.services{
+grid-column:span 6;
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:1fr;
 gap:20px;
 }
 
-.skills p{
-margin-bottom:6px;
+.services .card{
+text-align:left;
 }
 
-.project-card{
-border:1px solid #e38ba5;
-border-radius:12px;
-padding:16px;
-margin-top:12px;
+.services i{
+font-size:24px;
+margin-bottom:10px;
+}
+
+/* EXPERIENCE */
+
+.experience{
+grid-column:span 7;
+}
+
+/* SKILLS */
+
+.skills{
+grid-column:span 5;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+margin-top:10px;
+}
+
+.skill{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:8px;
+}
+
+.stars{
+margin-left:auto;
+}
+
+/* PROJECTS */
+
+.projects{
+grid-column:span 12;
+}
+
+.projects-subtitle{
+margin-bottom:20px;
+}
+
+.project-tag{
+display:inline-block;
+background:#000;
+color:#fff;
+padding:4px 10px;
+border-radius:20px;
+font-size:12px;
+margin:10px 0;
+}
+
+.project-link{
+display:inline-flex;
+align-items:center;
+gap:8px;
+text-decoration:none;
+color:#000;
+margin-top:10px;
+}
+
+/* CONTACT */
+
+.contact-section{
+grid-column:span 12;
+display:flex;
+gap:20px;
+}
+
+.contact-section .card{
+flex:1;
+text-align:center;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.hero-left,
+.hero-right,
+.about-card,
+.services,
+.experience,
+.skills,
+.projects,
+.contact-bar{
+grid-column:span 1;
+}
+
+.about-card{
+grid-template-columns:1fr;
+}
+
+.about-cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.contact-section{
+flex-direction:column;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="page">
+<div class="grid">
 
-<!-- CONTATO -->
+<!-- CONTACT BAR -->
 
-<div class="card full">
-<div class="contact">
-<div><i class="fa fa-envelope"></i> paloma@email.com</div>
-<div><i class="fa fa-phone"></i> +55 11 00000-0000</div>
+<div class="card contact-bar">
+
+<div>📧 palomasantosmaster@gmail.com</div>
+
+<div>📍 São Paulo</div>
+
+<div><i class="fas fa-phone"></i> 11 961990271</div>
+
 </div>
-</div>
 
-<!-- HERO NOME -->
+<!-- HERO -->
 
-<div class="card">
+<div class="card hero-left">
 
 <h1>Paloma Santos</h1>
 
 <h3>Análise de Dados | Inteligência de Mercado | Modelagem Analítica</h3>
 
 <div class="hero-icons">
+
+<a href="https://www.linkedin.com/in/paloma-araújo-579289209" target="_blank">
 <i class="fab fa-linkedin"></i>
+</a>
+
+<a href="https://github.com/paloma-analytics" target="_blank">
 <i class="fab fa-github"></i>
-</div>
+</a>
 
 </div>
 
-<!-- HERO DESCRIÇÃO -->
-
-<div class="card">
-
-<p>
-Atuo com análise de dados aplicada ao negócio,
-transformando bases operacionais em informações claras para apoiar decisões estratégicas.
-</p>
+<button onclick="document.getElementById('projetos').scrollIntoView({ behavior: 'smooth' });">
+Veja meu trabalho
+</button>
 
 <p>
-Trabalho desde a organização e validação dos dados até a construção de indicadores e dashboards executivos,
+Atuo com análise de dados aplicada ao negócio,<br>
+transformando bases operacionais em informações claras para apoiar decisões estratégicas.<br>
+Trabalho desde a organização e validação dos dados até a construção de indicadores e dashboards executivos,<br>
 com foco em gerar análises que ajudem a entender performance e orientar decisões.
 </p>
 
-<button class="button">Veja meu trabalho</button>
+</div>
+
+<div class="card hero-right">
+
+<img src="https://github.com/paloma-analytics/.github.io/blob/main/images/paloma.jpg?raw=true">
 
 </div>
 
-<!-- ABOUT ME -->
+<!-- ABOUT -->
 
-<div class="card full about">
-
-<img src="sua-foto.jpg">
+<div class="card about-card">
 
 <div>
 
 <h2>Sobre mim</h2>
 
 <p>
+
 Trabalho com dados porque gosto de entender o que está por trás dos números. Me interessa analisar informações com senso crítico, identificar padrões, desvios e relações, e transformar dados brutos em análises que realmente façam sentido para quem precisa decidir.
-</p>
 
-<p>
+<br><br>
+
 Atualmente sou estudante de Ciência de Dados e atuo com Inteligência de Mercado, aprofundando meus conhecimentos em análise, modelagem de dados, estatística aplicada e raciocínio analítico. Tenho interesse em evoluir cada vez mais na parte analítica, indo além da visualização para explorar os dados de forma estratégica, conectando métricas ao contexto do negócio.
+
 </p>
 
+<div class="about-cards">
+
+<div class="card">
+<h3>Anos de Experiencia</h3>
+<div class="highlight">2+</div>
+</div>
+
+<div class="card">
+<h3>Promoções Internas</h3>
+<div class="highlight">2x</div>
+</div>
+
+<div class="card">
+<h3>Certificações</h3>
+<div class="highlight">+14</div>
+</div>
+
+<div class="card">
+<h3>Projetos Entregues</h3>
+<div class="highlight">5+</div>
 </div>
 
 </div>
 
-<!-- SERVIÇOS -->
+</div>
 
-<div class="card services">
+<div class="photo-wrapper">
 
-<h2>Serviços</h2>
+<img src="https://github.com/paloma-analytics/.github.io/blob/main/images/paloma.jpg?raw=true" alt="Paloma Santos">
+
+</div>
+
+</div>
+
+<!-- SERVICES -->
+
+<div class="services">
+
+<div class="card">
+
+<i class="fas fa-chart-pie" style="color:#AA7F66;"></i>
+
+<h3>Criação de Dashboards</h3>
 
 <p>
-<strong>Criação de Dashboards</strong><br>
 Desenvolvimento de dashboards interativos focados em indicadores de negócio e apoio à tomada de decisão.
 </p>
 
+</div>
+
+<div class="card">
+
+<i class="fas fa-robot" style="color:#6B7556;"></i>
+
+<h3>Automações</h3>
+
 <p>
-<strong>Automações</strong><br>
 Automação de processos analíticos e integração de dados para reduzir tarefas manuais e aumentar eficiência.
 </p>
 
 </div>
 
-<!-- MÉTRICAS -->
-
-<div class="card">
-
-<h2>Indicadores</h2>
-
-<div class="metrics">
-
-<div>Anos de Experiência<br><strong>2+</strong></div>
-
-<div>Promoções Internas<br><strong>2x</strong></div>
-
-<div>Certificações<br><strong>+14</strong></div>
-
-<div>Projetos Entregues<br><strong>5</strong></div>
-
 </div>
 
-</div>
+<!-- EXPERIENCE -->
 
-<!-- EXPERIÊNCIA + SKILLS -->
-
-<div class="card full split">
-
-<div>
+<div class="card experience">
 
 <h2>Experiência</h2>
 
-<p><strong>Analista Jr de Inteligência de Mercado</strong><br>2024 – atual</p>
-
 <p>
-Atuo na análise e modelagem de dados para acompanhamento de indicadores de performance, apoiando áreas internas na leitura e uso das informações para tomada de decisão.
-</p>
 
-<p>
-Estruturo análises de ponta a ponta, desde o tratamento e organização das bases até a definição de métricas, construção de KPIs e desenvolvimento de dashboards executivos.
+Analista Jr de Inteligência de Mercado<br>
+2024 – atual<br><br>
+
+Atuo na análise e modelagem de dados para acompanhamento de indicadores de performance, apoiando áreas internas na leitura e uso das informações para tomada de decisão. Estruturo análises de ponta a ponta, desde o tratamento e organização das bases até a definição de métricas, construção de KPIs e desenvolvimento de dashboards executivos.
+
+<br><br>
+
+No dia a dia, participo de reuniões com diferentes áreas para entender demandas, definir indicadores e apresentar análises, garantindo que os dados sejam interpretados corretamente e utilizados de forma prática no acompanhamento de resultados. Meu trabalho envolve transformar necessidades de negócio em métricas claras, análises consistentes e visualizações que apoiam decisões.
+
 </p>
 
 </div>
 
-<div class="skills">
+<!-- SKILLS -->
+
+<div class="card skills">
 
 <h2>Skills</h2>
 
+<div class="skills-group">
+
 <h3>Ferramentas</h3>
 
-<p>Power BI ⭐⭐☆</p>
-<p>Figma ⭐⭐⭐</p>
-<p>Looker Studio ⭐⭐☆</p>
-<p>GitHub ⭐⭐☆</p>
-<p>n8n ⭐⭐☆</p>
+<div class="skills-grid">
+
+<div class="card skill"><i class="fas fa-chart-bar"></i>Power BI <span class="stars">⭐⭐☆</span></div>
+
+<div class="card skill"><i class="fab fa-figma"></i>Figma <span class="stars">⭐⭐⭐</span></div>
+
+<div class="card skill"><i class="fas fa-chart-line"></i>Looker Studio <span class="stars">⭐⭐☆</span></div>
+
+<div class="card skill"><i class="fab fa-github"></i>GitHub <span class="stars">⭐⭐☆</span></div>
+
+<div class="card skill"><i class="fas fa-robot"></i>n8n <span class="stars">⭐⭐☆</span></div>
+
+</div>
+
+</div>
+
+<div class="skills-group">
 
 <h3>Linguagens</h3>
 
-<p>Python ⭐☆☆</p>
-<p>SQL ⭐☆☆</p>
+<div class="skills-grid">
+
+<div class="card skill"><i class="fab fa-python"></i>Python <span class="stars">⭐☆☆</span></div>
+
+<div class="card skill"><i class="fas fa-database"></i>SQL <span class="stars">⭐☆☆</span></div>
 
 </div>
 
 </div>
 
-<!-- PROJETOS -->
+</div>
 
-<div class="card full">
+<!-- PROJECTS -->
 
-<h2>Projetos</h2>
+<div class="card projects">
 
-<div class="project-card">
+<h2 id="projetos">Projetos</h2>
 
-<strong>Performance de Vendas</strong>
+<p class="projects-subtitle">Projetos de análise de dados</p>
+
+<div class="card project-card">
+
+<h3>Performance de Vendas</h3>
 
 <p>
-Dashboard interativo desenvolvido em Power BI para acompanhamento de indicadores comerciais, análise de variações ao longo do tempo e suporte à tomada de decisão.
+Dashboard interativo desenvolvido em Power BI para acompanhamento de indicadores comerciais, análise de variações ao longo do tempo e suporte à tomada de decisão estratégica.
 </p>
 
+<div class="project-tag">Power BI</div>
+
+<a class="project-link" href="https://app.powerbi.com/view?r=eyJrIjoiZWU2ZDhkMTctMTdlYy00YTE4LThiNTUtZTU5ODVkNGE1NzM1IiwidCI6IjJlZGFmNGM0LTM2ZmItNDIzNi05NzM3LTQ0NTAwMzc3MzllMyJ9" target="_blank">
+
+Visualizar
+
+<i class="fas fa-arrow-up-right-from-square"></i>
+
+</a>
+
 </div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="contact-section">
+
+<div class="card">📧 palomasantosmaster@gmail.com</div>
+
+<div class="card"><i class="fas fa-phone"></i> 11 961990271</div>
 
 </div>
 
 </div>
 
 </body>
+
 </html>
