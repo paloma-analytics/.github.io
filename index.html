@@ -266,6 +266,8 @@ background:#ffaacb;
 
 .projects{
 grid-column:span 12;
+display:flex;
+flex-direction:column;
 }
 
 .projects h2{
@@ -277,16 +279,18 @@ margin-bottom:20px;
 color:#ffaacb;
 }
 
-.projects{
+/* GRID DOS CARDS DE PROJETO */
+
+.projects-grid{
 display:flex;
-flex-wrap:wrap;
 gap:20px;
+flex-wrap:nowrap;
 }
 
-/* ALTERAÇÃO FEITA AQUI */
+/* CARD INDIVIDUAL */
 
 .project-card{
-flex:1 1 calc(33.333% - 14px);
+flex:1;
 max-width:calc(33.333% - 14px);
 }
 
@@ -358,6 +362,14 @@ grid-template-columns:1fr;
 flex-direction:column;
 }
 
+.projects-grid{
+flex-direction:column;
+}
+
+.project-card{
+max-width:100%;
+}
+
 }
 
 </style>
@@ -411,16 +423,9 @@ com foco em gerar análises que ajudem a entender performance e orientar decisõ
 <h2>Sobre mim</h2>
 
 <p>
-Trabalho com dados porque gosto de entender o que está por trás dos números.
-Me interessa analisar informações com senso crítico, identificar padrões, desvios e relações,
-e transformar dados brutos em análises que realmente façam sentido para quem precisa decidir.
+Trabalho com dados porque gosto de entender o que está por trás dos números. Me interessa analisar informações com senso crítico, identificar padrões, desvios e relações, e transformar dados brutos em análises que realmente façam sentido para quem precisa decidir.
 <br><br>
-Atualmente sou estudante de Ciência de Dados e atuo com Inteligência de Mercado,
-aprofundando meus conhecimentos em análise, modelagem de dados, estatística aplicada
-e raciocínio analítico.
-Tenho interesse em evoluir cada vez mais na parte analítica,
-indo além da visualização para explorar os dados de forma estratégica,
-conectando métricas ao contexto do negócio.
+Atualmente sou estudante de Ciência de Dados e atuo com Inteligência de Mercado, aprofundando meus conhecimentos em análise, modelagem de dados, estatística aplicada e raciocínio analítico. Tenho interesse em evoluir cada vez mais na parte analítica, indo além da visualização para explorar os dados de forma estratégica, conectando métricas ao contexto do negócio.
 </p>
 
 </div>
@@ -478,20 +483,9 @@ Automação de processos analíticos e integração de dados para reduzir tarefa
 Analista Jr de Inteligência de Mercado<br>
 2024 – atual
 <br><br>
-
-Atuo na análise e modelagem de dados para acompanhamento de indicadores de performance,
-apoiando áreas internas na leitura e uso das informações para tomada de decisão.
-
-Estruturo análises de ponta a ponta, desde o tratamento e organização das bases
-até a definição de métricas, construção de KPIs e desenvolvimento de dashboards executivos.
+Atuo na análise e modelagem de dados para acompanhamento de indicadores de performance, apoiando áreas internas na leitura e uso das informações para tomada de decisão. Estruturo análises de ponta a ponta, desde o tratamento e organização das bases até a definição de métricas, construção de KPIs e desenvolvimento de dashboards executivos.
 <br><br>
-
-No dia a dia, participo de reuniões com diferentes áreas para entender demandas,
-definir indicadores e apresentar análises, garantindo que os dados sejam interpretados corretamente
-e utilizados de forma prática no acompanhamento de resultados.
-
-Meu trabalho envolve transformar necessidades de negócio em métricas claras,
-análises consistentes e visualizações que apoiam decisões.
+No dia a dia, participo de reuniões com diferentes áreas para entender demandas, definir indicadores e apresentar análises, garantindo que os dados sejam interpretados corretamente e utilizados de forma prática no acompanhamento de resultados. Meu trabalho envolve transformar necessidades de negócio em métricas claras, análises consistentes e visualizações que apoiam decisões.
 </p>
 
 </div>
@@ -546,6 +540,7 @@ análises consistentes e visualizações que apoiam decisões.
 </div>
 
 </div>
+
 </div>
 
 <div class="card projects">
@@ -553,88 +548,53 @@ análises consistentes e visualizações que apoiam decisões.
 <h2 id="projetos">Projetos</h2>
 <p class="projects-subtitle">Projetos de análise de dados</p>
 
-<div class="card project-card">
+<div class="projects-grid">
 
+<div class="card project-card">
 <h3>Performance de Vendas</h3>
-
 <p>
-Dashboard interativo desenvolvido em Power BI para acompanhamento de indicadores comerciais,
-análise de variações ao longo do tempo e suporte à tomada de decisão estratégica.
+Dashboard interativo desenvolvido em Power BI para acompanhamento de indicadores comerciais, análise de variações ao longo do tempo e suporte à tomada de decisão estratégica.
 </p>
-
 <div class="project-tag">Power BI</div>
-
-<a class="project-link"
-href="https://app.powerbi.com/view?r=eyJrIjoiZWU2ZDhkMTctMTdlYy00YTE4LThiNTUtZTU5ODVkNGE1NzM1IiwidCI6IjJlZGFmNGM0LTM2ZmItNDIzNi05NzM3LTQ0NTAwMzc3MzllMyJ9"
-target="_blank">
-
-Visualizar
-<i class="fas fa-arrow-up-right-from-square" style="color:#ffaacb"></i>
-
+<a class="project-link" href="https://app.powerbi.com/view?r=eyJrIjoiZWU2ZDhkMTctMTdlYy00YTE4LThiNTUtZTU5ODVkNGE1NzM1IiwidCI6IjJlZGFmNGM0LTM2ZmItNDIzNi05NzM3LTQ0NTAwMzc3MzllMyJ9" target="_blank">
+Visualizar <i class="fas fa-arrow-up-right-from-square" style="color:#ffaacb"></i>
 </a>
-
 </div>
 
 <div class="card project-card">
-
 <h3>Vendas x Meta</h3>
-
 <p>
-Dashboard analítico desenvolvido em Power BI para acompanhar o desempenho das vendas
-em relação às metas definidas, permitindo identificar rapidamente desvios e oportunidades de melhoria.
+Dashboard analítico desenvolvido em Power BI para acompanhar o desempenho das vendas em relação às metas definidas, permitindo identificar rapidamente desvios e oportunidades de melhoria.
 </p>
-
 <div class="project-tag">Power BI</div>
-
-<a class="project-link"
-href="https://app.powerbi.com/view?r=eyJrIjoiYmQ0MGQ2YmQtODUyOC00ZTM3LThlMTgtYTQyMjZkMTQyYjkyIiwidCI6IjJlZGFmNGM0LTM2ZmItNDIzNi05NzM3LTQ0NTAwMzc3MzllMyJ9"
-target="_blank">
-
-Visualizar
-<i class="fas fa-arrow-up-right-from-square" style="color:#ffaacb"></i>
-
+<a class="project-link" href="https://app.powerbi.com/view?r=eyJrIjoiYmQ0MGQ2YmQtODUyOC00ZTM3LThlMTgtYTQyMjZkMTQyYjkyIiwidCI6IjJlZGFmNGM0LTM2ZmItNDIzNi05NzM3LTQ0NTAwMzc3MzllMyJ9" target="_blank">
+Visualizar <i class="fas fa-arrow-up-right-from-square" style="color:#ffaacb"></i>
 </a>
-
 </div>
 
 <div class="card project-card">
-
 <h3>Vendas por Produtos</h3>
-
 <p>
-Dashboard focado na análise da performance dos produtos vendidos,
-permitindo identificar participação nas vendas, variações de desempenho
-e oportunidades de otimização comercial.
+Dashboard focado na análise da performance dos produtos vendidos, permitindo identificar participação nas vendas, variações de desempenho e oportunidades de otimização comercial.
 </p>
-
 <div class="project-tag">Power BI</div>
-
-<a class="project-link"
-href="https://app.powerbi.com/view?r=eyJrIjoiMzQzYWJjYzktZTE1NS00ZDIwLTliZDQtYTg1YWM0Mzg5NmMxIiwidCI6IjJlZGFmNGM0LTM2ZmItNDIzNi05NzM3LTQ0NTAwMzc3MzllMyJ9"
-target="_blank">
-
-Visualizar
-<i class="fas fa-arrow-up-right-from-square" style="color:#ffaacb"></i>
-
+<a class="project-link" href="https://app.powerbi.com/view?r=eyJrIjoiMzQzYWJjYzktZTE1NS00ZDIwLTliZDQtYTg1YWM0Mzg5NmMxIiwidCI6IjJlZGFmNGM0LTM2ZmItNDIzNi05NzM3LTQ0NTAwMzc3MzllMyJ9" target="_blank">
+Visualizar <i class="fas fa-arrow-up-right-from-square" style="color:#ffaacb"></i>
 </a>
-
 </div>
 
+</div>
 </div>
 
 <div class="contact-section">
+<div class="card">📧 palomasantosmaster@gmail.com</div>
 
 <div class="card">
-📧 palomasantosmaster@gmail.com
+<i class="fas fa-phone" style="color:#ffaacb"></i>
+11 961990271
 </div>
-
-<div class="card">
-<i class="fas fa-phone" style="color:#ffaacb"></i> 11 961990271
-</div>
-
 </div>
 
 </div>
-
 </body>
 </html>
